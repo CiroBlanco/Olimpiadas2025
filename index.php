@@ -9,7 +9,7 @@
 <body>
     <?php
         //incluimos el menu
-        include('menu_index.php');
+        include('./componentes/menu_index.php');
      ?>
      <h1 class="titulos">Agencia de Viajes</h1>
      <h2 class="titulos">Tecno Travel</h2> 
@@ -18,7 +18,7 @@
        <img src="imagenes/logo/Presentación cultura y tradiciones de Colombia ilustrativo creativo azul y amarillo (1).png" alt="">
      </div>
      <?php
-     include('componentesinicio/footer.php')
+     include('./componentesinicio/footer.php')
      ?>
 </body>
 </html>

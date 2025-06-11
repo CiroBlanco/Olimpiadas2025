@@ -8,27 +8,71 @@ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 font-size: 200%;
 color: rgb(136, 130, 130);
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+header{
+    width: 100%;
+    height: 5%;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
 }
-
-li {
-  float: left;
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: space-around;
 }
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+nav li{
+    position: relative;
+    height:50%;
+    top:0%;
+    left:0;
 }
-
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-  background-color: #111;
+nav a{
+    display:inline-block;
+    height: 100%;
+    width: 70%;
+    padding: 0 20%;
+    text-decoration: none;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 100%;
+    background-color: rgb(175, 125, 235);
+    opacity: 0.6;
+    transition: 0.3s;
+    transition: color 0.3s;
+    
+}
+nav ul li a{
+    display: block;
+    border-radius: 16px;
+    transition: 0,2s;
+    margin: 2px 25px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+nav a:hover{
+    opacity: 1;
+}
+.logo{
+    height: 15%;
+    width:15%;
+}
+.header nav{
+    position: fixed;
+    position: sticky;
+    top:0;
+    left:0;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 3px 3px 5px black;
 }

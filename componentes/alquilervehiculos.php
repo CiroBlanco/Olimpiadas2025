@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <section>
+        <div class="tarjeta">
+        </div>
+    </section>
 </body>
 </html>
