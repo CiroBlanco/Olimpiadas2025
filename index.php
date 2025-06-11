@@ -13,7 +13,7 @@
      ?>
      <h1>Agencia de Viajes</h1>
      <div class="contenedor">
-
+     <img src="" alt="">       
      </div>
      <?php
      include('componentesinicio/footer.php')
