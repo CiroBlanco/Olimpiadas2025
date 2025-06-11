@@ -15,5 +15,8 @@
      <div class="contenedor">
 
      </div>
+     <?php
+     include('componentesinicio/footer.php')
+     ?>
 </body>
 </html>
