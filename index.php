@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./componentesinicio/index.css">
+    <title>olimpiadas2025</title>
 </head>
 <body>
-<h1>Olimpiadas 2025</h1>
-<h2>Agenicia de turismo</h2>
-<?php
-include('./php/componentes/menu_index.php');
-?>
-<div class="contenedorinicio">
+    <?php
+        //incluimos el menu
+        include('componentes/menu_index.php');
+     ?>
+     <h1>Agencia de Viajes</h1>
+     <div class="contenedor">
 
-</div>
+     </div>
 </body>
 </html>
