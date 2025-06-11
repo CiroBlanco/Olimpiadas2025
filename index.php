@@ -15,7 +15,7 @@
      <h2 class="titulos">Tecno Travel</h2> 
      <img src="imageneslogo/logo(2).png" alt="">
      <div class="contenedor">
-       
+       <img src="imagenes/logo/Presentación cultura y tradiciones de Colombia ilustrativo creativo azul y amarillo (1).png" alt="">
      </div>
      <?php
      include('componentesinicio/footer.php')
