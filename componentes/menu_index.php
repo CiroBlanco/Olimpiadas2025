@@ -5,6 +5,7 @@ if(!isset($_SESSION['usuario'])){ //si no hay sesion
     echo'<header class="header">
         <nav>
             <ul>
+              <li> class="active"></li>
                 <li><a href="index.php" class="active">INICIO</a></li>
                 <li><a href=".php"></a></li>
                    <li><a href=".php">PAQUETES TURISTICOS</a>
@@ -26,7 +27,7 @@ if(!isset($_SESSION['usuario'])){ //si no hay sesion
         <nav>
             <ul>
                 <li><a href=".php" class="active">INICIO</a></li>
-                 <li><a href=".php"></a></li>
+                 <li></li>
                    <li><a href=".php">PAQUETES TURISTICOS</a>
                 <ul>
                 <li><a href=".php" class="active">PAQUETES INTERNACIONALES</a></li>
