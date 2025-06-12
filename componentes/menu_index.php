@@ -5,13 +5,13 @@ if(!isset($_SESSION['usuario'])){ //si no hay sesion
    echo'<header class="header">
         <nav>
             <ul>
-                <li><a href="../index.php" ">Inicio</a></li>
-                <li><a href="paquetesturisticos.php">Paquetes Turisticos</a></li>
-                <li><a href="alquilervehiculos.php">Alquiler Vehiculos</a></li>
-                <li><a href="estadias.php">Estadias</a></li>
-                <li><a href="pasajesaereos.php">Pasajes Aereos</a></li>
-                <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
-                <li><a href="../login_registro/formulario_iniciarsesion.php">Inicar Sesion</a></li>
+                <li><a href="./index.php" ">Inicio</a></li>
+                <li><a href="./paquetesturisticos.php">Paquetes Turisticos</a></li>
+                <li><a href="./alquilervehiculos.php">Alquiler Vehiculos</a></li>
+                <li><a href="./estadias.php">Estadias</a></li>
+                <li><a href="./pasajesaereos.php">Pasajes Aereos</a></li>
+                <li><a href="./login_registro/formulario_registrarse.php">Registrarse</a></li>
+                <li><a href="./login_registro/formulario_iniciarsesion.php">Inicar Sesion</a></li>
             </ul>
        </nav>
      </header>';
