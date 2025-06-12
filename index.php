@@ -22,7 +22,7 @@
      </header>
      <h1 class="titulos">Agencia de Viajes</h1>
      <h2 class="titulos">Tecno Travel</h2> 
-      <h3 class="tituloimg">Disfruta de tus destinos favoritos con la mejor comapñia y a precios increibles</h3>
+      <h3 class="tituloimg">Disfruta de tus destinos favoritos con la mejor compañía y a precios increibles</h3>
       <div class="container">
 
   <!-- imagenes anchas con texto -->

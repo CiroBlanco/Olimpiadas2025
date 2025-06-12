@@ -22,28 +22,29 @@
        </nav>
      </header>';
    <h1 class="titulos">Registrarse</h1>
-    <form action="registrarse.php" method="POST">
-            <div class="campo">
-               <label for="nombre">Nombre Completo:</label>
-            <input type="text" name= "nombre" id="nombre" placeholder=""required autocomplete= "off">
-            </div>
-            <div class="campo">
-                 <label for="correoelectronico">Correo Electronico:</label>
-               <input type="email" name="correoelectronico"id="correoelectronico"placeholder=""required autocomplete= "off">
-            </div>
-            <div class="campo">
-               <label for="usuario">Usuario:</label>
-              <input type="text" name="usuario" id="usuario" placeholder=""required autocomplete= "off">
-            </div>
-             <div class="campo">
-           <label for="contrasena">Contraseña:</label>
-            <input type="password" name="contrasena" id="contrasena" placeholder="" required autocomplete= "off">
-            </div>
-             <input type="reset" value="Cancelar">
-             <input type="submit" value="Registrarse">
-</div>
-    </form>
+<form action="registrarse.php" method="POST">
+  <div class="campo">
+    <label for="nombre">Nombre Completo:</label>
+    <input type="text" name="nombre" id="nombre" placeholder="" required autocomplete="off">
+  </div>
 
-  
+  <div class="campo">
+    <label for="email">Correo Electrónico:</label>
+    <input type="email" name="email" id="email" placeholder="" required autocomplete="off">
+  </div>
+
+  <div class="campo">
+    <label for="nombre_usuario">Usuario:</label>
+    <input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="" required autocomplete="off">
+  </div>
+
+  <div class="campo">
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" name="contrasena" id="contrasena" placeholder="" required autocomplete="off">
+  </div>
+
+  <input type="reset" value="Cancelar">
+  <input type="submit" value="Registrarse">
+</form> 
 </body>
 </html>

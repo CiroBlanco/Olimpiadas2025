@@ -1,4 +1,5 @@
 <?php
+include('../componentes/conexion.php');
 session_start();
 
 if (isset($_SESSION['usuario'])) {
@@ -9,16 +10,18 @@ if (isset($_SESSION['usuario'])) {
 }
 else
 {
-    $email=$_POST['email'];
-    $contra=$_POST['contra'];
-    $contra_MD5=md5($contra); //ENCRIPTACION DE CONTRASEÑA DE FORMULARIO
-    $sql="SELECT * FROM usuario where email='".$email."'"; //CONSULTAMOS SI EXISTE EL USUARIO
+    $nombre_usuario=$_POST['nombre_usuario'];
+    $contrasena=$_POST['contrasena'];
+    $contra_encriptada=md5($contrasena); //ENCRIPTACION DE CONTRASEÑA DE FORMULARIO
+    $sql="SELECT * FROM usuario WHERE nombre_usuario='".$nombre_usuario."'"; //CONSULTAMOS SI EXISTE EL USUARIO
     $resultado=mysqli_query($conexion,$sql);
 
     if(mysqli_num_rows($resultado)>0)
     { //SI EXISTE LA CUENTA
         $datos=mysqli_fetch_assoc($resultado);
-        if ($contra_MD5==$datos['contrasena'])
+        var_dump($contra_encriptada );
+        var_dump($datos['contrasena'] );
+        if ($contra_encriptada==$datos['contrasena'])
         { //SI LAS CONTRASEÑAS COINCIDEN
          $_SESSION['usuario']=$datos['usuario']; //INICIAMOS SESION
          $_SESSION['admin']=$datos['admin'];
@@ -41,5 +44,4 @@ else
             </script>';
     }
 }
-?>
 ?>

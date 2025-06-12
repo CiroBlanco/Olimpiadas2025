@@ -1,10 +1,11 @@
 <?php
-$usuario = $_POST['nombre_usuario'];
-$contrasena = $_POST['contrasena'];
+include('../componentes/conexion.php');
 $nombre = $_POST['nombre'];
-$email=$_POST['correoelectronico'];
+$email = $_POST['email'];
+$nombre_usuario = $_POST['nombre_usuario'];
+$contrasena = $_POST['contrasena'];
 
-$consultausuario="SELECT * FROM usuario WHERE email='".$correo_electronico."'";
+$consultausuario="SELECT * FROM usuario WHERE email='".$email."'";
 $resultado=mysqli_query($conexion,$consultausuario);
 
 if (mysqli_num_rows($resultado)>0) {
@@ -16,12 +17,11 @@ if (mysqli_num_rows($resultado)>0) {
     $contra_encriptada = md5($contrasena);
     $insertar_usuario= "INSERT INTO `usuario`(`nombre`,`email`,
      `nombre_usuario`, `contrasena`, `admin`) VALUES (
-    '".$nombre."',
-    '".$correo_electronico."',
-    '".$usuario."',
-    '".$contra_encriptada."',
-    '".$admin"',
-    '0')";
+     '".$nombre."',
+     '".$email."',
+     '".$nombre_usuario."',
+     '".$contra_encriptada."',
+     '0')";
 
     $resultado_insercion =mysqli_query($conexion,$insertar_usuario);
 
@@ -30,7 +30,6 @@ if (mysqli_num_rows($resultado)>0) {
     //resultado
     //ifelse if($resultado_insercion)
         //si inserto redirigiar a donde?  -> header("Location: iniciarsesion.php")
-        //si no inserto, tirar error
-        
+        //si no inserto, tirar error  
 }
 ?>
