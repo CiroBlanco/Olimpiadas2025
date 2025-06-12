@@ -8,9 +8,19 @@
     
 </head>
 <body>
-     <?php
-   include ('../componentes/menu_index.php')
-    ?>
+   '<header class="header">
+        <nav>
+            <ul>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="../componentes/paquetesturisticos.php">Paquetes Turisticos</a></li>
+                <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
+                <li><a href="../componentes/estadias.php">Estadias</a></li>
+                <li><a href="../componentes/pasajesaereos.php">Pasajes Aereos</a></li>
+                <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
+                <li><a href="#">Inicar Sesion</a></li>
+            </ul>
+       </nav>
+     </header>';
     <center><h1>Olimpiadas-2025</h1></center>  
     <div class="form">
         <h1>Inicio de Sesión</h1>

@@ -8,10 +8,19 @@
   
 </head>
 <body>
-    <?php
-    //incluimos el menu
-    include('../componentes/menu_index.php');
-    ?>
+  '<header class="header">
+        <nav>
+            <ul>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="../componentes/paquetesturisticos.php">Paquetes Turisticos</a></li>
+                <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
+                <li><a href="../componentes/estadias.php">Estadias</a></li>
+                <li><a href="../componentes/pasajesaereos.php">Pasajes Aereos</a></li>
+                <li><a href="#">Registrarse</a></li>
+                <li><a href="../login_registro/formulario_iniciarsesion.php">Inicar Sesion</a></li>
+            </ul>
+       </nav>
+     </header>';
    <h1 class="titulos">Registrarse</h1>
     <form action="registrarse.php" method="POST">
             <div class="campo">
