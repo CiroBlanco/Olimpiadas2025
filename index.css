@@ -39,13 +39,12 @@ nav a{
     display: flex;
     align-self: center;
     align-items: center;
-    color: rgb(255, 255, 255);
+    color:rgb(38, 37, 37);
     font-size: 100%;
-    background-color: rgb(175, 125, 235);
+    background-color: rgb(246, 232, 130);
     opacity: 0.6;
     transition: 0.3s;
-    transition: color 0.3s;
-    
+    transition: color 0.3s;  
 }
 nav ul li a{
     display: block;
@@ -74,5 +73,5 @@ nav a:hover{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    box-shadow: 3px 3px 5px black;
+    box-shadow: 3px 3px 5px rgb(59, 59, 58);
 }

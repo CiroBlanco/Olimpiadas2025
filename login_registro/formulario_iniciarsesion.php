@@ -20,11 +20,11 @@
         <h1>Inicio de Sesión</h1>
         
         <form action="iniciarsesion.php" method="POST">
-            <div class="form-group">
+            <div class="campo">
              <label>Nombre de Usuario:</label>
              <input type="text"name="email" required autocomplete="off">
             </div>
-            <div class="form-group">
+            <div class="campo">
              <label>Contraseña:</label>
              <input type="password" name="contra" required autocomplete="off">
             </div>

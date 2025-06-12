@@ -1,9 +1,8 @@
 <?php
 include('./php/componentes/conexion.php');
-$usuario = $_POST['usuario'];
+$usuario = $_POST['nombre_usuario'];
 $contrasena = $_POST['contrasena'];
 $nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
 $email=$_POST['correoelectronico'];
 
 $consultausuario="SELECT * FROM usuario WHERE email='".$correo_electronico."'";
@@ -16,13 +15,13 @@ if (mysqli_num_rows($resultado)>0) {
         </script>';
 } else {
     $contra_encriptada = md5($contrasena);
-    $insertar_usuario= "INSERT INTO `usuario`(`nombre`, `apellido`,`email`,
-     `usuario`, `contrasena`, `tipo_usuario`) VALUES (
+    $insertar_usuario= "INSERT INTO `usuario`(`nombre`,`email`,
+     `nombre_usuario`, `contrasena`, `admin`) VALUES (
     '".$nombre."',
-    '·".$apellido."',
     '".$correo_electronico."',
     '".$usuario."',
     '".$contra_encriptada."',
+    '".$admin"',
     '0')";
 
     $resultado_insercion =mysqli_query($conexion,$insertar_usuario);

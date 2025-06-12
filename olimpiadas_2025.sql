@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2025 a las 02:31:37
+-- Tiempo de generación: 12-06-2025 a las 02:28:59
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -93,7 +93,7 @@ CREATE TABLE `pedidos_entregados` (
 
 CREATE TABLE `pedidos_pendientes` (
   `id_pendientes` int(11) NOT NULL,
-  `id_usuario` varchar(30) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
   `monto` float NOT NULL,
   `fecha_pedido` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -147,7 +147,9 @@ ALTER TABLE `categoria`
 -- Indices de la tabla `correos_enviados`
 --
 ALTER TABLE `correos_enviados`
-  ADD PRIMARY KEY (`id_correo`);
+  ADD PRIMARY KEY (`id_correo`),
+  ADD KEY `FK_correos_enviados_pedidos_entregados` (`id_pedidos`),
+  ADD KEY `FK_correos_enviados_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `detalle_pedido`
@@ -168,7 +170,8 @@ ALTER TABLE `pedidos_entregados`
 -- Indices de la tabla `pedidos_pendientes`
 --
 ALTER TABLE `pedidos_pendientes`
-  ADD PRIMARY KEY (`id_pendientes`);
+  ADD PRIMARY KEY (`id_pendientes`),
+  ADD KEY `FK_pedidos_pendientes_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `productos`
@@ -242,8 +245,15 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  ADD CONSTRAINT `FK_carrito_producto` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_carrito_producto` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `FK_carrito_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `correos_enviados`
+--
+ALTER TABLE `correos_enviados`
+  ADD CONSTRAINT `FK_correos_enviados_pedidos_entregados` FOREIGN KEY (`id_pedidos`) REFERENCES `pedidos_entregados` (`id_pedidos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_correos_enviados_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `detalle_pedido`
@@ -257,6 +267,12 @@ ALTER TABLE `detalle_pedido`
 --
 ALTER TABLE `pedidos_entregados`
   ADD CONSTRAINT `FK_pedidos_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `pedidos_pendientes`
+--
+ALTER TABLE `pedidos_pendientes`
+  ADD CONSTRAINT `FK_pedidos_pendientes_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

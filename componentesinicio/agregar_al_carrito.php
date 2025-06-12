@@ -1,10 +1,9 @@
 <?php 
 include('conexion.php');
 session_start();
-$id_producto = $_POST['id'];
-$cantidad = $_POST['cantidad'];
-$categoria = $_POST['categoria'];
+$id_producto = $_POST['id_producto'];
 $id_usuario = $_SESSION['id_usuario'];
+$cantidad = $_POST['cantidad'];
 
 //ingresar el producto y el usuario a la tabla pedidos
 $sql_insert = 
