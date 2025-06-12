@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../index.css">
+    <title>Olimpiadas2025</title>
+  
 </head>
 <body>
     <?php
     //incluimos el menu
     include('../componentes/menu_index.php');
-
     ?>
-    <center><h1></h1></center>
-  
-     <h1>Registrarse</h1>
+   <h1 class="titulos">Registrarse</h1>
     <form action="registrarse.php" method="POST">
             <div class="campo">
             <input type="text" name= "nombre" id="nombre" placeholder=""required autocomplete= "off">

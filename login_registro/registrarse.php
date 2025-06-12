@@ -1,5 +1,4 @@
 <?php
-include('./php/componentes/conexion.php');
 $usuario = $_POST['nombre_usuario'];
 $contrasena = $_POST['contrasena'];
 $nombre = $_POST['nombre'];
