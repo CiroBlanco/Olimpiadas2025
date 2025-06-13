@@ -24,7 +24,7 @@
      <div class="tarjetaestadia">   
         <h2 class="titulos">Estadias en Argentina✈️</h2>
 
-<article class="tarejta">
+<article class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
@@ -40,7 +40,7 @@
     <div class="tarjetaestadia">
         <h3 class="titulos">Estadias en el Mundo✈️</h3>
         
-       <article class="tarejta">
+       <article class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>

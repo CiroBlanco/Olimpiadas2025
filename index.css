@@ -273,7 +273,8 @@ height: 30%;
   margin: 1em auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 20%;
+
 }
 
 .tarjeta {
@@ -296,4 +297,18 @@ height: 30%;
   color: #fff;
   padding: 0.5rem;
   border: #222;
+}
+.gif
+{
+width: 10%;
+height: 10%;
+border-radius: 15%;
+float: left;
+}
+.gif2
+{
+width: 10%;
+height: 10%;
+border-radius: 15%;
+float: right;
 }

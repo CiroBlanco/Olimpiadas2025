@@ -22,7 +22,7 @@
      </header>
     <section>
       <div class="tarjetas">
-   <article class="tarejta">
+   <article class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
@@ -34,7 +34,7 @@
          <footer>I have a footer!</footer>
     </div>
 
-    <article class="tarejta">
+    <article class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
@@ -46,7 +46,7 @@
          <footer>I have a footer!</footer>
     </div>
     
-    <article class="tarejta">
+    <article class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
