@@ -8,7 +8,7 @@
     
 </head>
 <body>
-   '<header class="header">
+   <header class="header">
         <nav>
             <ul>
                 <li><a href="../index.php">Inicio</a></li>
@@ -20,10 +20,9 @@
                 <li><a href="#">Iniciar Sesion</a></li>
             </ul>
        </nav>
-     </header>';
-    <center><h1>Olimpiadas-2025</h1></center>  
+     </header>
+    <center><h1 class="titulos">Iniciar Sesion</h1></center>  
     <div class="form">
-        <h1>Inicio de Sesión</h1>
         <form action="iniciarsesion.php" method="POST">
             <div class="campo">
              <label>Nombre de Usuario:</label>
