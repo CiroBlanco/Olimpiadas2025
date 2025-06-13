@@ -1,3 +1,12 @@
+<?php
+include('conexion.php');
+$sql = "SELECT id_producto, descripcion, precio_unitario FROM productos";
+$resultado = mysqli_query($conexion, $sql);
+
+if (!$resultado) {
+    die("Error en la consulta: " . mysqli_error($conexion));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,42 +30,14 @@
        </nav>
      </header>
     <div class="contenedor">
-      <div class="tarjeta">
-    <header>
-      <h2>A short heading</h2>
-    </header>
-    <div class="contenido">
-      <p>
-        The idea of reaching the North Pole by means of balloons appears to have
-        been entertained many years ago.
-      </p>
-         <footer>I have a footer!</footer>
-    </div>
-    </div>
+    <?php while($producto = mysqli_fetch_assoc($resultado)): ?>
     <div class="tarjeta">
-    <header>
-      <h2>A short heading</h2>
-    </header>
-    <div class="contenido">
-      <p>
-        The idea of reaching the North Pole by means of balloons appears to have
-        been entertained many years ago.
-      </p>
-         <footer>I have a footer!</footer>
+        <h3>Producto #<?= $producto['id_producto'] ?></h3>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
+        <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
+        <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
     </div>
-    </div>
-    <div class="tarjeta">
-    <header>
-      <h2>A short heading</h2>
-    </header>
-    <div class="contenido">
-      <p>
-        The idea of reaching the North Pole by means of balloons appears to have
-        been entertained many years ago.
-      </p>
-         <footer>I have a footer!</footer>
-    </div>
-    </div>
+<?php endwhile; ?>
     </div> 
 </body>
 </html>

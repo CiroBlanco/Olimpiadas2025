@@ -312,23 +312,25 @@ height: 30%;
   font-weight: 700;
   margin-top: 15px;
 }
-.contenedor {
+.contenedor{
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-self: center;
   gap: 20px;
   padding: 20px;
   background-color: #f9f9f9;
+  border: 1px solid lightblue;
+  top: 50%;
 }
 .tarjeta h2 {
   margin: 0;
   padding: 0.5rem;
 }
-
 .tarjeta.content {
   padding: 0.5rem;
 }
-
 .tarjeta footer {
   background-color: #756d6d;
   color: #fff;

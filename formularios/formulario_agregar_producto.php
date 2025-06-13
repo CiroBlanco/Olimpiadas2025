@@ -8,8 +8,13 @@
 </head>
 <body>
     <h1 class="titulos">Agregar Producto</h1>
+    <div class="form">
     <form action="../componentes/agregar_producto.php" method="POST">
-     
+
+     <div class="campo">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="" required autocomplete="off">
+     </div>
     <div class="campo">
         <label for="descripcion">Descripcion:</label>
         <input type="text" name="descripcion" id="descripcion" placeholder="" required autocomplete="off">
@@ -19,10 +24,21 @@
         <label for="precio_unitario">Precio Unitario:</label>
         <input type="text" name="precio_unitario" id="precio_unitario" placeholder="" required autocomplete="off">
      </div>
+    <div class="campo">
+        <label for="tipo">Tipo Producto:</label>
+        <select name="tipo" id="tipo">
+            <option value="">Vehiculo</option>
+            <option value="">Estadia</option>
+            <option value="">Paquete Nacional</option>
+            <option value="">Paquete Internacional</option>
+            <option value="">Pasaje Nacional</option>
+            <option value="">Pasaje Internacional</option>
+        </select>
+     </div>
 
      <input type="reset" value="Cancelar">
      <input type="submit" value="Agregar">
-    
+    </div>
     </form>
 </body>
 </html>

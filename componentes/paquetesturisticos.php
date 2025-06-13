@@ -33,6 +33,7 @@ if (!$resultado) {
 <?php while($producto = mysqli_fetch_assoc($resultado)): ?>
     <div class="tarjeta">
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
     </div>

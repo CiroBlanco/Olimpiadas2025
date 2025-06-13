@@ -1,3 +1,12 @@
+<?php
+include('conexion.php');
+$sql = "SELECT id_producto, descripcion, precio_unitario FROM productos";
+$resultado = mysqli_query($conexion, $sql);
+
+if (!$resultado) {
+    die("Error en la consulta: " . mysqli_error($conexion));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,34 +32,17 @@
 <h1 class="titulos">¿Buscas un vuelo comodo y seguro?</h1>
 <h2 class="titulos">Nosotros te ayudamos😉</h2>
 <div class="Pasajes">
-  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2pnNXg5aTh5dzlmbmd4MGxqanRua3Y0aWNyYXduMGZrMjAzZWRqbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SzBlFsQg26JL0s12P9/giphy.gif" alt="" class="gif">
-  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczlrZ3V4ZWJwcXVjZHh0dTZ4N3U4OW5sbzUzZHZnMTV4MGExZW5sNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l41YwCX3wQ5W6ChTW/giphy.gif" alt="" class="gif2">
+
 </div>
-<div class="contenedor">
-<div class="tarjeta">
-    <header>
-      <h2>A short heading</h2>
-    </header>
-    <div class="contenido">
-      <p>
-        The idea of reaching the North Pole by means of balloons appears to have
-        been entertained many years ago.
-      </p>
-         <footer>I have a footer!</footer>
-    </div>
-    </div>
+  <div class="contenedor">
+    <?php while($producto = mysqli_fetch_assoc($resultado)): ?>
     <div class="tarjeta">
-    <header>
-      <h2>A short heading</h2>
-    </header>
-    <div class="contenido">
-      <p>
-        The idea of reaching the North Pole by means of balloons appears to have
-        been entertained many years ago.
-      </p>
-         <footer>I haves a footer!</footer>
+        <h3>Producto #<?= $producto['id_producto'] ?></h3>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
+        <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
+        <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
     </div>
-    </div>
-    </div>
+<?php endwhile; ?>
+    </div> 
 </body>
 </html>
