@@ -256,3 +256,44 @@ color: rgb(136, 130, 130);
 .demo:hover {
   opacity: 1;
 }
+.auto
+{
+  background-color: rgb(255, 255, 179);
+  color: rgb(136, 130, 130);
+  height: 30%;
+  width: 20%;
+}
+img
+{
+width: 30%;
+height: 30%;
+}
+.tarjetas {
+  max-width: 30%;
+  margin: 1em auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 20px;
+}
+
+.tarjeta {
+  border: 1px solid #999;
+  border-radius: 3px;
+  display: grid;
+  grid-template-rows: max-content 30% 1fr;
+}
+.tarjeta h2 {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.tarjeta.content {
+  padding: 0.5rem;
+}
+
+.tarjeta footer {
+  background-color: #756d6d;
+  color: #fff;
+  padding: 0.5rem;
+  border: #222;
+}

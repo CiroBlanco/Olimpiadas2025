@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-   include ('../componentes/menu_index.php')
+
     ?>
 </body>
 </html>

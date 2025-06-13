@@ -21,8 +21,43 @@
        </nav>
      </header>
     <section>
-        <div class="tarjeta">
-        </div>
+      <div class="tarjetas">
+   <article class="tarejta">
+    <header>
+      <h2>A short heading</h2>
+    </header>
+    <div class="contenido">
+      <p>
+        The idea of reaching the North Pole by means of balloons appears to have
+        been entertained many years ago.
+      </p>
+         <footer>I have a footer!</footer>
+    </div>
+
+    <article class="tarejta">
+    <header>
+      <h2>A short heading</h2>
+    </header>
+    <div class="contenido">
+      <p>
+        The idea of reaching the North Pole by means of balloons appears to have
+        been entertained many years ago.
+      </p>
+         <footer>I have a footer!</footer>
+    </div>
+    
+    <article class="tarejta">
+    <header>
+      <h2>A short heading</h2>
+    </header>
+    <div class="contenido">
+      <p>
+        The idea of reaching the North Pole by means of balloons appears to have
+        been entertained many years ago.
+      </p>
+         <footer>I have a footer!</footer>
+    </div>
+     
     </section>
 </body>
 </html>

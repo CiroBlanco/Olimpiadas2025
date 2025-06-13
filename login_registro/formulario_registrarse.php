@@ -8,7 +8,7 @@
   
 </head>
 <body>
-  '<header class="header">
+  <header class="header">
         <nav>
             <ul>
                 <li><a href="../index.php">Inicio</a></li>
@@ -20,7 +20,7 @@
                 <li><a href="../login_registro/formulario_iniciarsesion.php">Inicar Sesion</a></li>
             </ul>
        </nav>
-     </header>';
+     </header>
    <h1 class="titulos">Registrarse</h1>
 <form action="registrarse.php" method="POST">
   <div class="campo">
