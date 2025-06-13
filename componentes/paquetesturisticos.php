@@ -1,6 +1,6 @@
 <?php
 include('conexion.php');
-$sql = "SELECT id_producto, descripcion, precio_unitario FROM productos";
+$sql = "SELECT * FROM productos";
 $resultado = mysqli_query($conexion, $sql);
 
 if (!$resultado) {
@@ -19,7 +19,13 @@ if (!$resultado) {
         <nav>
             <ul>
                 <li><a href="../index.php">Inicio</a></li>
-                <li><a href="#">Paquetes Turisticos</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                    </div>
+                </li>
                 <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
                 <li><a href="../componentes/estadias.php">Estadias</a></li>
                 <li><a href="../componentes/pasajesaereos.php">Pasajes Aereos</a></li>
@@ -29,15 +35,7 @@ if (!$resultado) {
        </nav>
 </header>
 <body>
-   <div class="contenedor">
-<?php while($producto = mysqli_fetch_assoc($resultado)): ?>
-    <div class="tarjeta">
-        <h3>Producto #<?= $producto['id_producto'] ?></h3>
-        <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
-        <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
-        <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
-    </div>
-<?php endwhile; ?>
+ 
 </div>
 </body>
 </html>

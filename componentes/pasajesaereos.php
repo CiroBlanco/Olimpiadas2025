@@ -1,11 +1,6 @@
 <?php
 include('conexion.php');
-$sql = "SELECT id_producto, descripcion, precio_unitario FROM productos";
-$resultado = mysqli_query($conexion, $sql);
 
-if (!$resultado) {
-    die("Error en la consulta: " . mysqli_error($conexion));
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,18 +26,6 @@ if (!$resultado) {
      </header>
 <h1 class="titulos">¿Buscas un vuelo comodo y seguro?</h1>
 <h2 class="titulos">Nosotros te ayudamos😉</h2>
-<div class="Pasajes">
 
-</div>
-  <div class="contenedor">
-    <?php while($producto = mysqli_fetch_assoc($resultado)): ?>
-    <div class="tarjeta">
-        <h3>Producto #<?= $producto['id_producto'] ?></h3>
-        <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
-        <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
-        <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
-    </div>
-<?php endwhile; ?>
-    </div> 
 </body>
 </html>

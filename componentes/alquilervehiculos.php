@@ -1,6 +1,6 @@
 <?php
 include('conexion.php');
-$sql = "SELECT id_producto, descripcion, precio_unitario FROM productos";
+$sql = "SELECT * FROM productos WHERE id_tipo = 2";
 $resultado = mysqli_query($conexion, $sql);
 
 if (!$resultado) {
@@ -30,7 +30,7 @@ if (!$resultado) {
        </nav>
      </header>
     <div class="contenedor">
-    <?php while($producto = mysqli_fetch_assoc($resultado)): ?>
+    <?php while($producto = mysqli_fetch_assoc($resultado)):?>
     <div class="tarjeta">
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
