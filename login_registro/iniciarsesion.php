@@ -26,7 +26,7 @@ else
          $_SESSION['usuario']=$datos['usuario']; //INICIAMOS SESION
          $_SESSION['admin']=$datos['admin'];
          var_dump($_SESSION);
-         header("Location: index.php");
+         header("Location: ../index.php");
         }
         else
         {

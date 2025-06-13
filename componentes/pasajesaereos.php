@@ -26,7 +26,8 @@
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2pnNXg5aTh5dzlmbmd4MGxqanRua3Y0aWNyYXduMGZrMjAzZWRqbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SzBlFsQg26JL0s12P9/giphy.gif" alt="" class="gif">
   <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczlrZ3V4ZWJwcXVjZHh0dTZ4N3U4OW5sbzUzZHZnMTV4MGExZW5sNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l41YwCX3wQ5W6ChTW/giphy.gif" alt="" class="gif2">
 </div>
-<article class="tarjeta">
+<div class="contenedor">
+<div class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
@@ -37,7 +38,8 @@
       </p>
          <footer>I have a footer!</footer>
     </div>
-    <article class="tarjeta">
+    </div>
+    <div class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
@@ -46,7 +48,9 @@
         The idea of reaching the North Pole by means of balloons appears to have
         been entertained many years ago.
       </p>
-         <footer>I have a footer!</footer>
+         <footer>I haves a footer!</footer>
+    </div>
+    </div>
     </div>
 </body>
 </html>

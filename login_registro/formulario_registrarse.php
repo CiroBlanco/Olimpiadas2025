@@ -22,6 +22,7 @@
        </nav>
      </header>
    <h1 class="titulos">Registrarse</h1>
+   <div class="form">
 <form action="registrarse.php" method="POST">
   <div class="campo">
     <label for="nombre">Nombre Completo:</label>
@@ -46,5 +47,6 @@
   <input type="reset" value="Cancelar">
   <input type="submit" value="Registrarse">
 </form> 
+</div>
 </body>
 </html>

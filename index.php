@@ -16,7 +16,7 @@
                 <li><a href="componentes/estadias.php">Estadias</a></li>
                 <li><a href="componentes/pasajesaereos.php">Pasajes Aereos</a></li>
                 <li><a href="login_registro/formulario_registrarse.php">Registrarse</a></li>
-                <li><a href="login_registro/formulario_iniciarsesion.php">Inicar Sesion</a></li>
+                <li><a href="login_registro/formulario_iniciarsesion.php">Inici ar Sesion</a></li>
             </ul>
        </nav>
      </header>

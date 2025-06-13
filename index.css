@@ -276,12 +276,49 @@ height: 30%;
   grid-gap: 20%;
 
 }
-
 .tarjeta {
-  border: 1px solid #999;
-  border-radius: 3px;
-  display: grid;
-  grid-template-rows: max-content 30% 1fr;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 15px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  border: 2px solid black;
+}
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.tarjeta h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.tarjeta p {
+  font-size: 1rem;
+  color: #555;
+  margin: 6px 0;
+}
+.tarjeta p strong {
+  color: #222;
+  font-weight: 700;
+}
+.tarjeta p.precio {
+  font-size: 1.2rem;
+  color: #e67e22; 
+  font-weight: 700;
+  margin-top: 15px;
+}
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 .tarjeta h2 {
   margin: 0;

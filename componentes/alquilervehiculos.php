@@ -20,9 +20,8 @@
             </ul>
        </nav>
      </header>
-    <section>
-      <div class="tarjetas">
-   <article class="tarjeta">
+    <div class="contenedor">
+      <div class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
@@ -33,8 +32,8 @@
       </p>
          <footer>I have a footer!</footer>
     </div>
-
-    <article class="tarjeta">
+    </div>
+    <div class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
@@ -45,8 +44,8 @@
       </p>
          <footer>I have a footer!</footer>
     </div>
-    
-    <article class="tarjeta">
+    </div>
+    <div class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
@@ -57,7 +56,7 @@
       </p>
          <footer>I have a footer!</footer>
     </div>
-     
-    </section>
+    </div>
+    </div> 
 </body>
 </html>

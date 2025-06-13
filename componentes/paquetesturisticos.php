@@ -34,7 +34,7 @@ if (!$resultado) {
     <div class="tarjeta">
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
-        <p><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
+        <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
     </div>
 <?php endwhile; ?>
 </div>

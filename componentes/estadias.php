@@ -23,8 +23,8 @@
      <h1 class="titulos"> Estadias</h1>
      <div class="tarjetaestadia">   
         <h2 class="titulos">Estadias en Argentina✈️</h2>
-
-<article class="tarjeta">
+<div class="contenedor">
+<div class="tarjeta">
     <header>
       <h2>A short heading</h2>
     </header>
@@ -35,23 +35,23 @@
       </p>
          <footer>I have a footer!</footer>
     </div>
-
+    </div>
     </div>
     <div class="tarjetaestadia">
         <h3 class="titulos">Estadias en el Mundo✈️</h3>
-        
-       <article class="tarjeta">
-    <header>
-      <h2>A short heading</h2>
-    </header>
-    <div class="contenido">
-      <p>
-        The idea of reaching the North Pole by means of balloons appears to have
-        been entertained many years ago.
-      </p>
+  <div class="contenedor">
+        <div class="tarjeta">
+          <header>
+             <h2>A short heading</h2>
+         </header>
+        <div class="contenido">
+        <p>
+          The idea of reaching the North Pole by means of balloons appears to have
+         been entertained many years ago.
+        </p>
          <footer>I have a footer!</footer>
     </div>
   </div>
-
+</div>
 </body>
 </html>
