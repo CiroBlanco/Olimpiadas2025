@@ -1,3 +1,12 @@
+<?php
+include('conexion.php');
+$sql = "SELECT id_producto, descripcion, precio_unitario FROM productos";
+$resultado = mysqli_query($conexion, $sql);
+
+if (!$resultado) {
+    die("Error en la consulta: " . mysqli_error($conexion));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +15,7 @@
     <link rel="stylesheet" href="../index.css">
     <title>Olimpiadas2025</title>
 </head>
-<body>
-    <header class="header">
+ <header class="header">
         <nav>
             <ul>
                 <li><a href="../index.php">Inicio</a></li>
@@ -19,6 +27,16 @@
                 <li><a href="../login_registro/formulario_iniciarsesion.php">Inicar Sesion</a></li>
             </ul>
        </nav>
-     </header>
+</header>
+<body>
+   <div class="contenedor">
+<?php while($producto = mysqli_fetch_assoc($resultado)): ?>
+    <div class="tarjeta">
+        <h3>Producto #<?= $producto['id_producto'] ?></h3>
+        <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
+        <p><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
+    </div>
+<?php endwhile; ?>
+</div>
 </body>
 </html>

@@ -8,14 +8,9 @@
 </head>
 <body>
     <h1 class="titulos">Agregar Producto</h1>
-    <form action="agregar_producto.php" method="POST">
-
-     <div class="campo">
-        <label for="nombre">Nombre Producto:</label>
-        <input type="text" name="nombre" id="nombre" placeholder="" required autocomplete="off">
-     </div>
-
-     <div class="campo">
+    <form action="../componentes/agregar_producto.php" method="POST">
+     
+    <div class="campo">
         <label for="descripcion">Descripcion:</label>
         <input type="text" name="descripcion" id="descripcion" placeholder="" required autocomplete="off">
      </div>
