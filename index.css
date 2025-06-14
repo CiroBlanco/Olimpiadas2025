@@ -382,6 +382,27 @@ height: 30%;
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: rgb(255, 255, 179);}
+footer{
+    width: 100%;
+    bottom:0;
+    background-color:rgb(238, 222, 104) ;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    margin-top: auto;
+}
+footer .redes{
+    position: relative;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1% 0;
+    flex-wrap: wrap;
+}
 
 footer .redes li{
 
@@ -397,10 +418,26 @@ footer .redes li a:hover{
     transform:translateY(-20%);
 }
 footer .derechos{
-  background-color: rgb(255, 255, 179); 
     color: rgb(55, 55, 59);
     text-align: center;
     margin-top: 1%;
     margin-bottom: 1%;
     font-size: 1.1em;
+}
+.carrito
+{
+    display:inline-block;
+    height: 100%;
+    width: 70%;
+    padding: 0 20%;
+    text-decoration: none;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    color:rgb(38, 37, 37);
+    font-size: 100%;
+    background-color:;
+    opacity: 0.6;
+    transition: 0.3s;
+    transition: color 0.3s;  
 }
