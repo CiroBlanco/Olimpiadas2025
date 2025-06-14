@@ -312,7 +312,7 @@ height: 30%;
   font-weight: 700;
   margin-top: 15px;
 }
-.contenedor{
+.contenedorautomedio{
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -381,4 +381,26 @@ height: 30%;
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: rgb(255, 255, 179);;}
+.dropdown:hover .dropbtn {background-color: rgb(255, 255, 179);}
+
+footer .redes li{
+
+    list-style: none;
+}
+footer .redes li a{
+    font-size: 2em;
+    color: black;
+    display:inline-block;
+    transition: 0,5s;
+}
+footer .redes li a:hover{
+    transform:translateY(-20%);
+}
+footer .derechos{
+  background-color: rgb(255, 255, 179); 
+    color: rgb(55, 55, 59);
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 1.1em;
+}

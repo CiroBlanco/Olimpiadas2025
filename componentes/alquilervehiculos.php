@@ -29,6 +29,7 @@ if (!$resultado) {
             </ul>
        </nav>
      </header>
+       <h1 class="titulos"> Alquiler Vehiculos</h1>
     <div class="contenedor">
     <?php while($producto = mysqli_fetch_assoc($resultado)):?>
     <div class="tarjeta">
