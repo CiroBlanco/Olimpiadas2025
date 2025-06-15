@@ -20,10 +20,10 @@ if (!$resultado) {
             <ul>
                 <li><a href="../index.php">Inicio</a></li>
                 <li class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
+                    <button class="dropbtn">Paquetes Turísticos</button>
+                    <div class="dropdown-contenido">
+                        <a href="#">Paquetes Nacionales</a>
+                        <a href="#">Paquetes Internacionales</a>
                     </div>
                 </li>
                 <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>

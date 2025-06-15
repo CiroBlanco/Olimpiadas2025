@@ -1,5 +1,7 @@
 body{
 background-color: rgb(255, 242, 227);
+margin: 0;
+padding: 0;
 }
 .titulos
 {
@@ -14,12 +16,16 @@ header{
     align-items: center;
     justify-content: space-between;
 }
+header nav{
+  top:0;
+}
 nav ul{
     width: 100%;
     list-style: none;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     justify-content: space-between;
     justify-content: space-around;
 }
@@ -38,6 +44,7 @@ nav a{
     display: flex;
     align-self: center;
     align-items: center;
+    align-content: center;
     color:rgb(38, 37, 37);
     font-size: 100%;
     background-color: rgb(246, 232, 130);
@@ -46,12 +53,15 @@ nav a{
     transition: color 0.3s;  
 }
 nav ul li a{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 16px;
     transition: 0,2s;
     margin: 2px 25px;
     padding: 8px 15px;
     cursor: pointer;
+    text-align: center;
     transition: all 0.3s ease 0s;
 }
 nav a:hover{
@@ -117,7 +127,7 @@ input[type=email], select {
   box-sizing: border-box;
   background-color: rgb(255, 242, 227) ;
 }
-input[type=submit] {
+input[type=submit]{
   width: 25%;
   background-color:  rgb(246, 232, 130);
   color: white;
@@ -127,7 +137,7 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-color: rgb(136, 130, 130);
+  color: rgb(136, 130, 130);
 }
 
 input[type=submit]:hover {
@@ -136,7 +146,7 @@ input[type=submit]:hover {
 input[type=reset]:hover {
   background-color: rgb(238, 222, 104);
 }
-div {
+div{
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
   padding: 20px;
@@ -153,8 +163,7 @@ input[type=reset] {
   border-radius: 4px;
   cursor: pointer;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-color: rgb(136, 130, 130);
-
+color: rgb(136, 130, 130);  
 }
 
 /*Carrusel*/
@@ -342,6 +351,7 @@ height: 30%;
 /* Dropdown Button */
 .dropbtn {
   display: block;
+  background-color: rgb(255, 255, 179);
   border-radius: 16px;
   transition: 0,2s;
   margin: 2px 25px;
@@ -349,7 +359,9 @@ height: 30%;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
-
+.dropbtn:hover{
+  background-color: rgb(246, 232, 130);
+}
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
@@ -357,7 +369,7 @@ height: 30%;
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.dropdown-contenido {
   display: none;
   position: absolute;
   background-color: rgb(255, 255, 179);
@@ -367,7 +379,7 @@ height: 30%;
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-contenido a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
@@ -375,16 +387,17 @@ height: 30%;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-contenido a:hover {background-color: #;}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-contenido {display: block;}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: rgb(255, 255, 179);}
 footer{
+  position: absolute;
+  bottom: 0;
     width: 100%;
-    bottom:0;
+    margin-left: 0;
+    margin-right: 0;
     background-color:rgb(238, 222, 104) ;
     align-items: center;
     justify-content: center;
@@ -401,6 +414,7 @@ footer .redes{
     align-items: center;
     justify-content: center;
     margin: 1% 0;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -424,20 +438,9 @@ footer .derechos{
     margin-bottom: 1%;
     font-size: 1.1em;
 }
-.carrito
-{
-    display:inline-block;
-    height: 100%;
-    width: 70%;
-    padding: 0 20%;
-    text-decoration: none;
-    display: flex;
-    align-self: center;
-    align-items: center;
-    color:rgb(38, 37, 37);
-    font-size: 100%;
-    background-color:;
-    opacity: 0.6;
-    transition: 0.3s;
-    transition: color 0.3s;  
+.carrito ion-icon{
+  font-size: 20px;
+}
+.perfilboton ion-icon{
+  font-size: 20px;
 }

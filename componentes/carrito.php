@@ -1,7 +1,6 @@
 <?php 
 include('conexion.php');
-session_start();
-
+include('menu_index.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,14 +8,11 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito</title>
-    <link rel="stylesheet" href="../css/accesorios.css">
+    <link rel="stylesheet" href="../index.css">
 </head>
 <body>
-<nav class="menu">
 
-</nav>
-<h2>Pequeños Encantos</h2>
-
+<h2>Tu Carrito</h2>
 <?php
 
 if (isset($_SESSION['id_usuario'])){
@@ -35,11 +31,10 @@ if (isset($_SESSION['id_usuario'])){
         echo $fila['Descripcion'];
     }
     }else{
-        echo "Sin productos! revisa el catalogo para poder comprar :)";
+        echo "No se han encontrado productos, añada un carrito al producto por favor.";
     }
 }
-else
-    header('location:iniciarsesion.php');
+
 
 ?>
 </body>
