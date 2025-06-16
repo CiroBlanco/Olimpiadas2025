@@ -37,6 +37,7 @@ if (!$resultado) {
      <h1 class="titulos"> Estadias</h1>
 
     <div class="contenedor">
+    <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
    <?php while($producto = mysqli_fetch_assoc($resultado)):?>
     <div class="tarjeta">
         <h3>Producto #<?= $producto['id_producto'] ?></h3>

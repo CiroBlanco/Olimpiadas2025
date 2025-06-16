@@ -18,6 +18,7 @@ if (!$resultado) {
     <div class="contenedor">
    <?php while($producto = mysqli_fetch_assoc($resultado)):?>
     <div class="tarjeta">
+         <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>

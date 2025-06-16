@@ -10,6 +10,7 @@
     <header class="header">
         <nav>
             <ul>
+                
                 <li><a href="#">Inicio</a></li>
                 <li><a href="componentes/paquetesturisticos.php">Paquetes Turisticos</a></li>
                 <li><a href="componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
@@ -19,10 +20,12 @@
                 <li><a href="login_registro/formulario_iniciarsesion.php">Inici ar Sesion</a></li>
             </ul>
        </nav>
-     </header>
-     <h1 class="titulos">Agencia de Viajes</h1>
-     <h2 class="titulos">Tecno Travel</h2> 
-      <h3 class="tituloimg">Disfruta de tus destinos favoritos con la mejor compañía y a precios increibles</h3>
+     </header> 
+   
+     <h1 class="titulos">Agencia de Viajes</h1> 
+     <img src="imageneslogos/logo (2).png" alt="" class="logo">
+     <h3 class="tituloimg">Disfruta de tus destinos favoritos con la mejor compañía y a precios increibles</h3> 
+
       <div class="container">
 
   <!-- imagenes anchas con texto -->

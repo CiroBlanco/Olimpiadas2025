@@ -361,16 +361,25 @@ height: 30%;
 /* Dropdown Button */
 .dropbtn {
   display: block;
-  background-color: rgb(255, 255, 179);
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    transition: 0,2s;
+    margin: 2px 25px;
+    padding: 8px 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+  background-color: rgb(246, 232, 130) ;
+  opacity: 0.6;
   border-radius: 16px;
-  transition: 0,2s;
-  margin: 2px 25px;
-  padding: 8px 15px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
+  border: none;
+color:rgb(136, 130, 130);
+
 }
 .dropbtn:hover{
   background-color: rgb(246, 232, 130);
+  opacity: 1;
 }
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -489,7 +498,32 @@ footer .derechos{
 }
 .contenedor{
   border-radius: 10px;
-  background-color: rgb(188, 186, 241);
+  background-color:rgb(255, 202, 150) ;
   border: 2px solid rgb(120, 118, 118);
   margin: 10px;
+}
+.agregar
+{
+border: 2px solid  black;
+border-radius: 18px;
+padding: 4px;
+color:rgb(255, 202, 150) ;
+float: right;
+position: relative;
+top: 0px;
+background-color: #fff;
+width:25px;
+text-align: center;
+font-size: 1.2em;
+}
+.logo
+{
+  border: 3px solid rgb(0, 24, 89);
+  border-radius: 80%;
+  width: 200px;
+  height: 200px;
+  position:relative;
+  align-items: center;
+  transform:translateX(350%);
+
 }

@@ -34,6 +34,7 @@ if (!$resultado) {
                 <li><a href="" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
             </ul>
        </nav>
+    <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
 </header>
 <body>
 </div>

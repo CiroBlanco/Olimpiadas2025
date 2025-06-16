@@ -17,7 +17,13 @@ include('conexion.php');
                 <li><a href="../componentes/paquetesturisticos.php">Paquetes Turisticos</a></li>
                 <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
                 <li><a href="../componentes/estadias.php">Estadias</a></li>
-                <li><a href="#">Pasajes Aereos</a></li>
+              <li class="dropdown">
+                    <button class="dropbtn">Pasajes Aereos</button>
+                    <div class="dropdown-contenido">
+                        <a href="pasajes_nacionales.php">Pasajes Nacionales</a>
+                        <a href="pasajes_internacionales.php">Pasajes Internacionales</a>
+                    </div>
+                </li>
                 <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
                 <li><a href="../login_registro/formulario_iniciarsesion.php">Iniciar Sesion</a></li>
                 <li><a href="../componentes/perfil.php" class="perfilboton"> <ion-icon name="person-circle-outline"></ion-icon></a></li>

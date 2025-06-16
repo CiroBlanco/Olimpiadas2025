@@ -26,12 +26,13 @@ if (!$resultado) {
                 <li><a href="../componentes/pasajesaereos.php">Pasajes Aereos</a></li>
                 <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
                 <li><a href="../login_registro/formulario_iniciarsesion.php">Inicar Sesion</a></li>
-                <li><a href="" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
+                <li><a href="../componentes/carrito.php" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
             </ul>
        </nav>
      </header>
        <h1 class="titulos"> Alquiler Vehiculos</h1>
     <div class="contenedor">
+     <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
     <?php while($producto = mysqli_fetch_assoc($resultado)):?>
     <div class="tarjeta">
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
@@ -39,7 +40,7 @@ if (!$resultado) {
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
     </div>
-     <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
+    
 <?php endwhile; ?>
      
     </div> 
