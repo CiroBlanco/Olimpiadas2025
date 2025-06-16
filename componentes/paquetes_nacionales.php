@@ -1,5 +1,6 @@
 <?php
 include('conexion.php');
+include('menu_index.php');
 $sql = "SELECT * FROM productos WHERE id_tipo = 3";
 $resultado = mysqli_query($conexion, $sql);
 
@@ -13,8 +14,10 @@ if (!$resultado) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../index.css">
 </head>
 <body>
+    <h1 class="titulos">Paquetes Nacionales</h1>
     <div class="contenedor">
    <?php while($producto = mysqli_fetch_assoc($resultado)):?>
     <div class="tarjeta">
@@ -26,5 +29,8 @@ if (!$resultado) {
     </div>
 <?php endwhile; ?>
     </div> 
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+     <?php include('../componentesinicio/footer.php');?>
 </body>
 </html>

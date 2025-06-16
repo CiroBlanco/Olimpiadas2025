@@ -60,6 +60,8 @@ nav a{
     opacity: 0.6;
     transition: 0.3s;
     transition: color 0.3s;  
+    border: 2px solid transparent;
+    transition: border 0.3s, color 0.3s;
 }
 nav ul li a{
     display: flex;
@@ -75,6 +77,7 @@ nav ul li a{
 }
 nav a:hover{
     opacity: 1;
+    border:2px solid black;
 }
 .logo{
     height: 15%;
@@ -310,6 +313,9 @@ height: 30%;
   transform: translateY(-8px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
+.tarjeta:hover .agregarcarrito{
+  display: inline;
+}
 .tarjeta h3 {
   font-size: 1.4rem;
   margin-bottom: 10px;
@@ -361,21 +367,22 @@ height: 30%;
 /* Dropdown Button */
 .dropbtn {
   display: block;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-    transition: 0,2s;
-    margin: 2px 25px;
-    padding: 8px 15px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease 0s;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  transition: 0,2s;
+  margin: 2px 25px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease 0s;
   background-color: rgb(246, 232, 130) ;
   opacity: 0.6;
   border-radius: 16px;
   border: none;
-color:rgb(136, 130, 130);
-
+  color:rgb(136, 130, 130);
+  height: 45px;
+  width: 180px;
+  padding: 0 20px;
 }
 .dropbtn:hover{
   background-color: rgb(246, 232, 130);
@@ -402,15 +409,16 @@ color:rgb(136, 130, 130);
 /* Links inside the dropdown */
 .dropdown-contenido a {
   color: black;
-  padding: 12px 16px;
+  padding: 4px 10px;
   text-decoration: none;
+  border-radius: 16px;
   display: block;
  text-align: center;
  justify-content: center;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-contenido a:hover {background-color: rgb(202, 233, 203);}
+.dropdown-contenido a:hover {background-color: rgb(255, 245, 170);}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-contenido {display: block;}
@@ -497,24 +505,11 @@ footer .derechos{
  background-color: red;
 }
 .contenedor{
+  position: relative;
   border-radius: 10px;
   background-color:rgb(255, 202, 150) ;
   border: 2px solid rgb(120, 118, 118);
   margin: 10px;
-}
-.agregar
-{
-border: 2px solid  black;
-border-radius: 18px;
-padding: 4px;
-color:rgb(255, 202, 150) ;
-float: right;
-position: relative;
-top: 0px;
-background-color: #fff;
-width:25px;
-text-align: center;
-font-size: 1.2em;
 }
 .logo
 {
@@ -525,5 +520,38 @@ font-size: 1.2em;
   position:relative;
   align-items: center;
   transform:translateX(350%);
-
+}
+.eliminar, .editar, .agregar{
+  top: 0;
+  float: right;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  margin: 2px;
+  border-radius: 50px;
+  width: 25px;
+  text-align: center;
+  border: 1px solid black;
+}
+.eliminar:hover,.editar:hover, .agregar:hover{
+  transform:translateY(-20%);
+  background-color: black;
+  color: white;
+}
+.agregarcarrito{
+  display: none;
+ height: 30px;
+ background-color: green;
+ width: 10px;
+ text-decoration:none;
+ color: black;
+ position: relative;
+ border: 1px solid black;
+ transition: 0.2s;
+ border-radius: 5px;
+}
+.agregarcarrito:hover{
+  transform:translateY(-20%);
+  opacity: 1.5;
+  background-color: rgb(102, 231, 102);
 }

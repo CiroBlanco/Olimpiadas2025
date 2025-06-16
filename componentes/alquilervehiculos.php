@@ -35,10 +35,14 @@ if (!$resultado) {
      <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
     <?php while($producto = mysqli_fetch_assoc($resultado)):?>
     <div class="tarjeta">
+        <a href="editar.php" class="editar"><ion-icon name="brush"></ion-icon></a>
+        <a href="eliminar.php" class="eliminar"><ion-icon name="trash-outline"></ion-icon></a>
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
+        <a href="agregar_producto_carrito.php" class="agregarcarrito"><ion-icon name="cart-outline"></ion-icon>Agregar al Carrito</a>
+     
     </div>
     
 <?php endwhile; ?>

@@ -20,8 +20,8 @@ include('conexion.php');
               <li class="dropdown">
                     <button class="dropbtn">Pasajes Aereos</button>
                     <div class="dropdown-contenido">
-                        <a href="pasajes_nacionales.php">Pasajes Nacionales</a>
-                        <a href="pasajes_internacionales.php">Pasajes Internacionales</a>
+                        <a href="../componentes/pasajes_nacionales.php">Pasajes Nacionales</a>
+                        <a href="../componentes/pasajes_internacionales.php">Pasajes Internacionales</a>
                     </div>
                 </li>
                 <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>

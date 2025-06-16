@@ -22,8 +22,8 @@ if (!$resultado) {
                 <li class="dropdown">
                     <button class="dropbtn">Paquetes Turísticos</button>
                     <div class="dropdown-contenido">
-                        <a href="#">Paquetes Nacionales</a>
-                        <a href="#">Paquetes Internacionales</a>
+                        <a href="paquetes_nacionales.php">Paquetes Nacionales</a>
+                        <a href="paquetes_internacionales.php">Paquetes Internacionales</a>
                     </div>
                 </li>
                 <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
