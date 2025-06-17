@@ -1,6 +1,5 @@
 <?php 
 include('conexion.php');
-include('menu_index.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,16 +16,14 @@ include('menu_index.php');
 if (isset($_SESSION['id_usuario'])){
     //cargar pedidos del usuario
     $id_usuario = $_SESSION['id_usuario'];
-    $sql = "SELECT * FROM productos WHERE Id_usuario='".$id_usuario."'";
+    $sql = "SELECT * FROM carrito WHERE Id_usuario='".$id_usuario."'";
 
     if ($resultado = $conexion->query($sql)){
         while($fila = $res->fetch_assoc()){
         echo "<br>";
-        echo $fila['nombre'];
+        echo $fila['id_producto'];
         echo "<br>";
-        echo "Precio: ARS $".$fila['precio_unitario'];
-        echo "<br>";
-        echo $fila['descripcion'];
+        echo $fila['cantidad'];
     }
     }else{
         echo "No se han encontrado productos, añada un carrito al producto por favor.";

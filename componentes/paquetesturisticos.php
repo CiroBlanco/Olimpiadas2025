@@ -31,7 +31,7 @@ if (!$resultado) {
                 <li><a href="../componentes/pasajesaereos.php">Pasajes Aereos</a></li>
                 <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
                 <li><a href="../login_registro/formulario_iniciarsesion.php">Inicar Sesion</a></li>
-                <li><a href="" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
+                <li><a href="../componentes/carrito.php" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
             </ul>
        </nav>
     <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
