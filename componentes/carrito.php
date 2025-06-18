@@ -39,35 +39,27 @@ session_start();
        </nav>
 </header>
 <h2 class="titulos">Tu Carrito</h2>
-<<<<<<< Updated upstream
+<p class="texto">Tus Productos</p>
+<form action="agregar_producto_carrito.php" method="post">
+<input type="hidden" name="id_producto" value="Producto">
 <?php
-
 if (isset($_SESSION['id_usuario'])){
     //cargar pedidos del usuario
     $id_usuario = $_SESSION['id_usuario'];
     $sql = "SELECT * FROM carrito WHERE Id_usuario='".$id_usuario."'";
+} else{
+     echo 'No se han encontrado productos, añada un carrito al producto por favor.';
+    }
+   if ($fila = mysqli_fetch_assoc($sql)) {
+    echo "Tus pedidos" . $fila['id_usuario'] . "<br>";
+    echo "Producto N°: " . $fila['id_producto'] . "<br>";
 
-    if ($resultado = $conexion->query($sql)){
-        while($fila = $res->fetch_assoc()){
-        echo "<br>";
-        echo $fila['id_producto'];
-        echo "<br>";
-        echo $fila['cantidad'];
-    }
-    }else{
-        echo "No se han encontrado productos, añada un carrito al producto por favor.";
-    }
 }
-?>
 
+
+?>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-=======
-<p class="texto">Tus Productos</p>
-<form action="agregar_producto_carrito.php" method="post">
-     <input type="hidden" name="id_producto" value="Producto">
-    <button type="submit">Agregar al carrito</button>
 </form>
->>>>>>> Stashed changes
 </body>
 </html>
