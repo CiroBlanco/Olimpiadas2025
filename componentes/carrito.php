@@ -1,5 +1,6 @@
 <?php 
 include('conexion.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +39,7 @@ include('conexion.php');
        </nav>
 </header>
 <h2 class="titulos">Tu Carrito</h2>
+<<<<<<< Updated upstream
 <?php
 
 if (isset($_SESSION['id_usuario'])){
@@ -60,5 +62,12 @@ if (isset($_SESSION['id_usuario'])){
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+=======
+<p class="texto">Tus Productos</p>
+<form action="agregar_producto_carrito.php" method="post">
+     <input type="hidden" name="id_producto" value="Producto">
+    <button type="submit">Agregar al carrito</button>
+</form>
+>>>>>>> Stashed changes
 </body>
 </html>
