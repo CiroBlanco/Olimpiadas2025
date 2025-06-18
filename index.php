@@ -7,21 +7,63 @@
     <title>olimpiadas2025</title>
 </head>
 <body>
-    <header class="header">
+  <?php
+  include('./componentes/conexion.php');
+  session_start();
+if(!isset($_SESSION['usuario'])){
+  echo'<header class="header">
         <nav>
-            <ul>
-                
+             <ul>
                 <li><a href="#">Inicio</a></li>
-                <li><a href="componentes/paquetesturisticos.php">Paquetes Turisticos</a></li>
-                <li><a href="componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
-                <li><a href="componentes/estadias.php">Estadias</a></li>
-                <li><a href="componentes/pasajesaereos.php">Pasajes Aereos</a></li>
-                <li><a href="login_registro/formulario_registrarse.php">Registrarse</a></li>
-                <li><a href="login_registro/formulario_iniciarsesion.php">Iniciar Sesion</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Paquetes Turísticos</button>
+                    <div class="dropdown-contenido">
+                        <a href="./componentes/paquetes_nacionales.php">Paquetes Nacionales</a>
+                        <a href="./componentes/paquetes_internacionales.php">Paquetes Internacionales</a>
+                    </div>
+                </li>
+                <li><a href="./componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
+                <li><a href="./componentes/estadias.php">Estadias</a></li>
+              <li class="dropdown">
+                    <button class="dropbtn">Pasajes Aereos</button>
+                    <div class="dropdown-contenido">
+                        <a href="./componentes/pasajes_nacionales.php">Pasajes Nacionales</a>
+                        <a href="./componentes/pasajes_internacionales.php">Pasajes Internacionales</a>
+                    </div>
+                </li>
+                <li><a href="./login_registro/formulario_registrarse.php">Registrarse</a></li>
+                <li><a href="./login_registro/formulario_iniciarsesion.php">Iniciar Sesion</a></li>
             </ul>
        </nav>
-     </header> 
-   
+</header>';
+}else{
+  echo'<header class="header">
+        <nav>
+             <ul>
+                <li><a href="#">Inicio</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Paquetes Turísticos</button>
+                    <div class="dropdown-contenido">
+                        <a href="./componentes/paquetes_nacionales.php">Paquetes Nacionales</a>
+                        <a href="./componentes/paquetes_internacionales.php">Paquetes Internacionales</a>
+                    </div>
+                </li>
+                <li><a href="./componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
+                <li><a href="./componentes/estadias.php">Estadias</a></li>
+              <li class="dropdown">
+                    <button class="dropbtn">Pasajes Aereos</button>
+                    <div class="dropdown-contenido">
+                        <a href="./componentes/pasajes_nacionales.php">Pasajes Nacionales</a>
+                        <a href="./componentes/pasajes_internacionales.php">Pasajes Internacionales</a>
+                    </div>
+                </li>
+                <li><a href="./componentes/perfil.php" class="perfilboton"> <ion-icon name="person-circle-outline"></ion-icon></a></li>
+                <li><a href="./componentes/carrito.php" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
+            </ul>
+       </nav>
+</header>';
+}
+?>
      <h1 class="titulos">Agencia de Viajes</h1> 
      <img src="imageneslogos/logo (2).png" alt="" class="logo">
      <h3 class="tituloimg">Disfruta de tus destinos favoritos con la mejor compañía y a precios increibles</h3> 

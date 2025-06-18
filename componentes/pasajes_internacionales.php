@@ -16,18 +16,24 @@ if (!$resultado) {
     <link rel="stylesheet" href="../index.css">
 </head>
 <body>
-      <header class="header">
+<header class="header">
         <nav>
-              <ul>
+             <ul>
                 <li><a href="../index.php">Inicio</a></li>
-                <li><a href="../componentes/paquetesturisticos.php">Paquetes Turisticos</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Paquetes Turísticos</button>
+                    <div class="dropdown-contenido">
+                        <a href="paquetes_nacionales.php">Paquetes Nacionales</a>
+                        <a href="paquetes_internacionales.php">Paquetes Internacionales</a>
+                    </div>
+                </li>
                 <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
                 <li><a href="../componentes/estadias.php">Estadias</a></li>
               <li class="dropdown">
                     <button class="dropbtn">Pasajes Aereos</button>
                     <div class="dropdown-contenido">
                         <a href="../componentes/pasajes_nacionales.php">Pasajes Nacionales</a>
-                        <a href="../componentes/pasajes_internacionales.php">Pasajes Internacionales</a>
+                        <a href="#">Pasajes Internacionales</a>
                     </div>
                 </li>
                 <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
@@ -36,7 +42,7 @@ if (!$resultado) {
                 <li><a href="carrito.php" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
             </ul>
        </nav>
-     </header>
+</header>
     <h1 class="titulos"> Pasajes Internacionales</h1>
     <div class="contenedor">
    <?php while($producto = mysqli_fetch_assoc($resultado)):?>

@@ -23,8 +23,8 @@ if (!$resultado) {
                 <li class="dropdown">
                     <button class="dropbtn">Paquetes Turísticos</button>
                     <div class="dropdown-contenido">
-                        <a href="paquetes_nacionales.php">Paquetes Nacionales</a>
-                        <a href="paquetes_internacionales.php">Paquetes Internacionales</a>
+                        <a href="../componentes/paquetes_nacionales.php">Paquetes Nacionales</a>
+                        <a href="#">Paquetes Internacionales</a>
                     </div>
                 </li>
                 <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
@@ -39,7 +39,7 @@ if (!$resultado) {
                 <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
                 <li><a href="../login_registro/formulario_iniciarsesion.php">Iniciar Sesion</a></li>
                 <li><a href="../componentes/perfil.php" class="perfilboton"> <ion-icon name="person-circle-outline"></ion-icon></a></li>
-                <li><a href="carrito.php" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
+                <li><a href="../componentes/carrito.php" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
             </ul>
        </nav>
 </header>
