@@ -1,6 +1,5 @@
 <?php
 include('conexion.php');
-include('menu_index.php');
 $sql = "SELECT * FROM productos WHERE id_tipo = 6";
 $resultado = mysqli_query($conexion, $sql);
 
@@ -17,14 +16,40 @@ if (!$resultado) {
     <link rel="stylesheet" href="../index.css">
 </head>
 <body>
+      <header class="header">
+        <nav>
+            <ul>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="../componentes/paquetesturisticos.php">Paquetes Turisticos</a></li>
+                <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
+                <li><a href="../componentes/estadias.php">Estadias</a></li>
+              <li class="dropdown">
+                    <button class="dropbtn">Pasajes Aereos</button>
+                    <div class="dropdown-contenido">
+                        <a href="../componentes/pasajes_nacionales.php">Pasajes Nacionales</a>
+                        <a href="../componentes/pasajes_internacionales.php">Pasajes Internacionales</a>
+                    </div>
+                </li>
+                <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
+                <li><a href="../login_registro/formulario_iniciarsesion.php">Iniciar Sesion</a></li>
+                <li><a href="../componentes/perfil.php" class="perfilboton"> <ion-icon name="person-circle-outline"></ion-icon></a></li>
+                <li><a href="carrito.php" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
+            </ul>
+       </nav>
+     </header>
     <h1 class="titulos"> Pasajes Internacionales</h1>
     <div class="contenedor">
    <?php while($producto = mysqli_fetch_assoc($resultado)):?>
-    <div class="tarjeta">
+   
+   <div class="tarjeta">
+        <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
+        <a href="editar.php" class="editar"><ion-icon name="brush"></ion-icon></a>
+        <a href="eliminar.php" class="eliminar"><ion-icon name="trash-outline"></ion-icon></a>
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
+        <a href="agregar_producto_carrito.php" class="agregarcarrito"><ion-icon name="cart-outline"></ion-icon>Agregar al Carrito</a>
     </div>
 <?php endwhile; ?>
     </div> 

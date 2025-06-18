@@ -1,8 +1,12 @@
 <?php
 include('conexion.php');
 include('menu_index.php');
-if (!isset($_SESSION['usuario'])){
-   // header("Location: ../login_registro/formulario_iniciarsesion.php");
+if (!isset($_SESSION['usuario'])){ // header("Location: ../login_registro/formulario_iniciarsesion.php");
+    $id_usuario = $_SESSION['id_usuario']; //el cual debes tener al validar el login
+//realizo la consulta
+$sql= "SELECT * FROM usuarios WHERE id = :id"; 
+  $result = $mysqli->query($sql);
+  $row = $result->fetch_assoc();
 }
 ?>
 <!DOCTYPE html>

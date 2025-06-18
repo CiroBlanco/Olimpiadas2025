@@ -33,6 +33,15 @@ include('conexion.php');
      </header>
 <h1 class="titulos">¿Buscas un vuelo comodo y seguro?</h1>
 <h2 class="titulos">Nosotros te ayudamos😉</h2>
+<div class="tarjeta">
+        <a href="editar.php" class="editar"><ion-icon name="brush"></ion-icon></a>
+        <a href="eliminar.php" class="eliminar"><ion-icon name="trash-outline"></ion-icon></a>
+        <h3>Producto #<?= $producto['id_producto'] ?></h3>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
+        <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
+        <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
+        <a href="agregar_producto_carrito.php" class="agregarcarrito"><ion-icon name="cart-outline"></ion-icon>Agregar al Carrito</a>
+    </div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
      <?php include('../componentesinicio/footer.php');?> 

@@ -1,5 +1,8 @@
 <?php
 include('conexion.php');
+
+var_dump($_POST);
+
 $id_producto = $_POST['id_producto'];
 $cantidad = $_POST ['cantidad'];
 //$categoria = $_POST['categoria'];

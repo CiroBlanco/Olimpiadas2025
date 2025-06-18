@@ -44,6 +44,7 @@ if (!$resultado) {
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
+        <a href="agregar_producto_carrito.php" class="agregarcarrito"><ion-icon name="cart-outline"></ion-icon>Agregar al Carrito</a>
     </div>
 <?php endwhile; ?>
     </div> 
