@@ -35,17 +35,13 @@
        </nav>
 </header>
     <h1 class="titulos">Tu Perfil</h1>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-</html>
-
+<div class="contenedorperfil">
 <?php
 include('conexion.php');
 session_start();
 if (!isset($_SESSION['id_usuario'])) {
     echo
-    " <div class= perfil> Debes registrarte e iniciar sesión en el sitio </div>";
+    "<p> Debes registrarte e iniciar sesión en el sitio </p>";
     echo"<a class=btnperfil href=../login_registro/formulario_registrarse.php>Registrate Ahora 😊</a>";
     exit;
 }
@@ -62,3 +58,9 @@ if ($fila = mysqli_fetch_assoc($consulta)) {
     echo "Usuario no encontrado.";
 }
 ?>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+

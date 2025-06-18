@@ -41,30 +41,30 @@ session_start();
 <h2 class="titulos">Tu Carrito</h2>
 <p class="texto">Tus Productos</p>
 <form action="agregar_producto_carrito.php" method="post">
-<<<<<<< Updated upstream
 <input type="hidden" name="id_producto" value="Producto">
 <?php
-if (isset($_SESSION['id_usuario'])){
-    //cargar pedidos del usuario
-    $id_usuario = $_SESSION['id_usuario'];
-    $sql = "SELECT * FROM carrito WHERE Id_usuario='".$id_usuario."'";
-} else{
-     echo 'No se han encontrado productos, añada un carrito al producto por favor.';
-    }
-   if ($fila = mysqli_fetch_assoc($sql)) {
-    echo "Tus pedidos" . $fila['id_usuario'] . "<br>";
-    echo "Producto N°: " . $fila['id_producto'] . "<br>";
-
+if (!isset($_SESSION['id_usuario'])) {
+    echo
+    " <div class= perfil> Para comprar en el sitio, debes registrarte e iniciar sesion</div>";
+    echo"<a class=btnperfil href=../login_registro/formulario_registrarse.php>Registrate Ahora 😊</a>";
+    exit;
 }
-
-
+ $id_usuario = $_SESSION['id_usuario'];
+$consulta = mysqli_query($conexion, "SELECT * FROM  WHERE iduser = $id_usuario AND idproducto=$id_producto");
+if ($fila = mysqli_fetch_assoc($consulta)) {
+    echo "<h2>Tus Productos😍</h2>";
+    echo "Usuario: " . $fila['id_usuario'] . "<br>";
+    echo "Producto: " . $fila['id_producto'] . "<br>";
+} else {
+    //echo "Usuario no encontrado.";
+}
 ?>
+<form action="agregar_producto_carrito.php" method="post"> 
+<input hidden type="number" name="id_usuario" value=<?php echo "'".$usuario['id_usuario']."'"?>>
+<input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
+ <input type="submit" value="Eliminar" class="btnperfil">
+</form>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-=======
-     <input type="hidden" name="id_producto" value="Producto">
-    <button type="submit">Agregar al carrito</button>
->>>>>>> Stashed changes
-</form>
 </body>
 </html>
