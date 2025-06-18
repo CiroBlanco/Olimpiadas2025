@@ -1,30 +1,36 @@
-<?php
-include('conexion.php');
-include('menu_index.php');
-if (!isset($_SESSION['usuario'])){ // header("Location: ../login_registro/formulario_iniciarsesion.php");
-    $id_usuario = $_SESSION['id_usuario']; //el cual debes tener al validar el login
-//realizo la consulta
-$sql= "SELECT * FROM usuarios WHERE id = :id"; 
-  $result = $mysqli->query($sql);
-  $row = $result->fetch_assoc();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../index.css">
     <title>Document</title>
-    <link rel="stylesheet" href="../index.css">
 </head>
 <body>
-    <h1 class="titulos">Perfil</h1>
-    <div class="perfil">
-        <p><strong>Nombre:</strong> </p>
-        <p><strong>Email:</strong> </p>
-        <p><strong>Usuario:</strong> </p>
-        <p><strong>Pedidos Pendientes:</strong> <? ?></p>
-        <a class="btnperfil"href="../componentesinicio/cerrarsesion.php"><strong>Cerrar Sesión</strong></a>
-    </div>
+    <h1 class="titulos">Tu Perfil</h1>
 </body>
 </html>
+<?php
+include('conexion.php');
+session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    echo
+    " <div class= perfil> Debes registrarte e iniciar sesión en el sitio </div>";
+    echo"<a class=btnperfil href=../login_registro/formulario_registrarse.php>Registrate Ahora 😊</a>";
+    exit;
+}
+$id_usuario = $_SESSION['id_usuario'];
+
+$consulta = mysqli_query($conexion, "SELECT * FROM pedido_pendiente WHERE id = $id_usuario");
+
+if ($fila = mysqli_fetch_assoc($consulta)) {
+    echo "<h2>Perfil del Usuario</h2>";
+    echo "Pedido Nº: " . $fila['id_pendientes'] . "<br>";
+    echo "Monto: " . $fila['monto'] . "<br>";
+    echo "Fecha pedido: " . $fila['fecha'] . "<br>";
+} else {
+    echo "Usuario no encontrado.";
+}
+
+
+?>

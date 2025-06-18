@@ -18,7 +18,7 @@ if (!$resultado) {
 <body>
       <header class="header">
         <nav>
-            <ul>
+              <ul>
                 <li><a href="../index.php">Inicio</a></li>
                 <li><a href="../componentes/paquetesturisticos.php">Paquetes Turisticos</a></li>
                 <li><a href="../componentes/alquilervehiculos.php">Alquiler Vehiculos</a></li>
