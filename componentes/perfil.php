@@ -39,29 +39,29 @@ session_start();
     <h1 class="titulos">Tu Perfil</h1>
 <div class="contenedorperfil">
 <?php
+$id_usuario = $_SESSION['id_usuario'];
+$consulta = mysqli_query($conexion, "SELECT * FROM pedidos_pendientes WHERE id_usuario ='".$id_usuario."'");
+
 if (!isset($_SESSION['id_usuario'])) {
     echo
     "<p> Debes registrarte e iniciar sesión en el sitio </p>";
     echo"<a class=btnperfil href=../login_registro/formulario_registrarse.php>Registrate Ahora 😊</a>";
     exit;
-}
-$id_usuario = $_SESSION['id_usuario'];
-
-$consulta = mysqli_query($conexion, "SELECT * FROM pedido_pendiente WHERE id = $id_usuario");
-
-if ($fila = mysqli_fetch_assoc($consulta)) {
+}else{
+    $fila = mysqli_fetch_assoc($consulta);
     echo "<h2>Perfil del Usuario</h2>";
     echo "Pedido Nº: " . $fila['id_pendientes'] . "<br>";
     echo "Monto: " . $fila['monto'] . "<br>";
     echo "Fecha pedido: " . $fila['fecha'] . "<br>";
-} else {
-    echo "Usuario no encontrado.";
+    echo "<a href='../componentesinicio/cerrarsesion.php'>Cerrar Sesion</a>";
 }
+
 ?>
 <a href="ayuda.php"class="boton-ayuda" title="Ayuda">?</a>
 </div>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+ <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+     <?php include('../componentesinicio/footer.php');?>
 </body>
 </html>
 

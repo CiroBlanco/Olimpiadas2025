@@ -93,7 +93,7 @@ if(!isset($_SESSION['usuario'])){
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
         <form action="agregar_producto_carrito.php" method="post">
             <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-             <a href="agregar_producto_carrito.php" class="agregarcarrito"><ion-icon name="cart-outline"></ion-icon>Agregar al Carrito</a>
+            <input type="submit" class="agregarcarrito" value="Agregar al carrito <ion-icon name='cart-outline'>">
         </form>
       
     </div>

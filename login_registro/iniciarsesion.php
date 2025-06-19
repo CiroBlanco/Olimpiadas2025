@@ -23,8 +23,9 @@ else
         var_dump($datos['contrasena'] );
         if ($contra_encriptada==$datos['contrasena'])
         { //SI LAS CONTRASEÑAS COINCIDEN
-         $_SESSION['usuario']=$datos['nombre_usuario']; //INICIAMOS SESION
-         $_SESSION['admin']=$datos['admin'];
+         $_SESSION['usuario']= $datos['nombre_usuario']; //INICIAMOS SESION
+         $_SESSION['admin']= $datos['admin'];
+         $_SESSION['id_usuario'] = $datos['id_usuario'];
         header("Location: ../index.php");
         }
         else
@@ -32,6 +33,7 @@ else
             //si las contraseñas no coinciden
             echo'<script>
             alert("contraseña incorrecta, por favor intente de nuevo");
+            window.location("formulario_iniciarsesion.php");
             </script>';
         }
     }

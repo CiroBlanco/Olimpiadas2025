@@ -49,22 +49,26 @@ if (!isset($_SESSION['id_usuario'])) {
     exit;
 }?>
 <?php
- $id_usuario = $_SESSION['id_usuario'];
-$consulta = mysqli_query($conexion, "SELECT * FROM  WHERE iduser = $id_usuario AND idproducto=$id_producto");
-if ($fila = mysqli_fetch_assoc($consulta)) {
-    echo "<h2>Tus Productos😍</h2>";
-    echo "Usuario: " . $fila['id_usuario'] . "<br>";
-    echo "Producto: " . $fila['id_producto'] . "<br>";
-    
-} else {
-    echo "Usuario no encontrado.";
+$id_usuario = $_SESSION['id_usuario'];
+$consulta = mysqli_query($conexion, "SELECT * FROM carrito WHERE id_usuario = $id_usuario");
+if (mysqli_num_rows($consulta)>0) {
+    //hay productos, imprimo las tarjetas
+    while ($resultados = mysqli_fetch_assoc($consulta)) {
+        $consulta_item = "SELECT * FROM productos WHERE id_producto ='".$resultados['id_producto']."'";
+        $resultado_item = mysqli_query($conexion,$consulta_item);
+        $producto = mysqli_fetch_assoc($resultado_item);
+        echo "<div class='tarjeta'>
+        <h3>Producto id: ".$resultados['id_producto']."</h3>
+        <p><strong>Nombre: ".$producto['nombre']."</p>
+        <p><strong>Descripción: ".$producto['descripcion']."</p>
+        <p class='precio'><strong>Precio Unitario:</strong> $".$producto['precio_unitario']."</p>
+</div>";
+    }
+}else {
+    //no hay productos
+    echo "sin productos en el carrito :c";
 }
 ?>
-<form action="agregar_producto_carrito.php" method="post"> 
-<input hidden type="number" name="id_usuario" value=<?php echo "'".$usuario['id_usuario']."'"?>>
-<input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
- <input type="submit" value="Eliminar" class="btnperfil">
-</form>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
