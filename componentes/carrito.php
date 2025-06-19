@@ -31,14 +31,13 @@ session_start();
                         <a href="../componentes/pasajes_internacionales.php">Pasajes Internacionales</a>
                     </div>
                 </li>
-                <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
-                <li><a href="../login_registro/formulario_iniciarsesion.php">Iniciar Sesion</a></li>
                 <li><a href="../componentes/perfil.php" class="perfilboton"> <ion-icon name="person-circle-outline"></ion-icon></a></li>
                 <li><a href="#" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
             </ul>
        </nav>
 </header>
 <h2 class="titulos">Tu Carrito</h2>
+<div class="contenedorcarrito"></div>
 <p class="texto">Tus Productos</p>
 <form action="agregar_producto_carrito.php" method="post">
 <input type="hidden" name="id_producto" value="Producto">
@@ -48,7 +47,8 @@ if (!isset($_SESSION['id_usuario'])) {
     " <div class= perfil> Para comprar en el sitio, debes registrarte e iniciar sesion</div>";
     echo"<a class=btnperfil href=../login_registro/formulario_registrarse.php>Registrate Ahora 😊</a>";
     exit;
-}
+}?>
+<?php
  $id_usuario = $_SESSION['id_usuario'];
 $consulta = mysqli_query($conexion, "SELECT * FROM  WHERE iduser = $id_usuario AND idproducto=$id_producto");
 if ($fila = mysqli_fetch_assoc($consulta)) {

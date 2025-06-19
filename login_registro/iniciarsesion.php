@@ -23,10 +23,9 @@ else
         var_dump($datos['contrasena'] );
         if ($contra_encriptada==$datos['contrasena'])
         { //SI LAS CONTRASEÑAS COINCIDEN
-         $_SESSION['usuario']=$datos['usuario']; //INICIAMOS SESION
+         $_SESSION['usuario']=$datos['nombre_usuario']; //INICIAMOS SESION
          $_SESSION['admin']=$datos['admin'];
-         var_dump($_SESSION);
-         header("Location: ../index.php");
+        header("Location: ../index.php");
         }
         else
         {

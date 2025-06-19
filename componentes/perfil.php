@@ -1,3 +1,7 @@
+<?php
+include('conexion.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +31,6 @@
                         <a href="../componentes/pasajes_internacionales.php">Pasajes Internacionales</a>
                     </div>
                 </li>
-                <li><a href="../login_registro/formulario_registrarse.php">Registrarse</a></li>
-                <li><a href="../login_registro/formulario_iniciarsesion.php">Iniciar Sesion</a></li>
                 <li><a href="#" class="perfilboton"> <ion-icon name="person-circle-outline"></ion-icon></a></li>
                 <li><a href="../componentes/carrito.php" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
             </ul>
