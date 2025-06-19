@@ -87,6 +87,7 @@ echo'<header class="header">
  </div>
 
 <?php endwhile; ?>
+<a href="ayuda.php"class="boton-ayuda" title="Ayuda">?</a>
 </div> 
  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

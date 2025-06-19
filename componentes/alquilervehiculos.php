@@ -12,7 +12,7 @@ if (!$resultado) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olimpiadas2025</title>
+    <title>Alquiler Vehiculos</title>
         <link rel="stylesheet" href="../index.css">
 </head>
 <body>
@@ -93,13 +93,13 @@ if(!isset($_SESSION['usuario'])){
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
         <form action="agregar_producto_carrito.php" method="post">
             <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-            <input type="submit" value="Agregar al carrito">
+             <a href="agregar_producto_carrito.php" class="agregarcarrito"><ion-icon name="cart-outline"></ion-icon>Agregar al Carrito</a>
         </form>
       
     </div>
     
 <?php endwhile; ?>
-     
+<a href="ayuda.php"class="boton-ayuda" title="Ayuda">?</a>
     </div> 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

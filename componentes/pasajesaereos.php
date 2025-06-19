@@ -39,6 +39,14 @@ include('conexion.php');
 </header>
 <h1 class="titulos">¿Buscas un vuelo comodo y seguro?</h1>
 <h2 class="titulos">Nosotros te ayudamos😉</h2>
+<div class="tarjeta">
+        <h3>Producto #<?= $producto['id_producto'] ?></h3>
+        <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
+        <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
+        <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
+ 
+ </div>
+<a href="ayuda.php"class="boton-ayuda" title="Ayuda">?</a>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
      <?php include('../componentesinicio/footer.php');?> 
