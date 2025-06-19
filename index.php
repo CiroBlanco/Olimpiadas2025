@@ -163,6 +163,19 @@ if(!isset($_SESSION['usuario'])){
       <img class="demo cursor" src="imageneslogos/eeuu.png" style="width:100%" onclick="currentSlide(10)" alt="Estados Unidos">
     </div>
   </div>
+  <div class="descripcion">
+<h2 class="titulodescripcion">¿Una empresa para viajar?<br>
+ Tecno Travel es la mejor opcion<br>
+ <img src="imageneslogos/viaje.png" alt="" class="imgviaje">
+</h2>
+<p class="descripcionp">Somos Tecno Travel!🧡 <br>
+Familia de viajes nacionales e internacionales.Tenemos paquetes turisticos a precios excelentes💰,Vuelos con aerolineas exclusivas✈️ y Estadias en los hoteles🏨,departamentos🛌,residencias🏠 y mas <br>
+Visitanos en nuestras redes y enterate de todas las novedades <br>
+¿Que esperas para armar ya tus vacaciones? <br>
+<a class="adescripcion"href="login_registro/formulario_registrarse.php">Empeza ya!😉</a>
+</p>
+
+  </div>
 </div>
     <?php
      include('./componentesinicio/footer.php')

@@ -9,7 +9,7 @@
 <body>
     <h1>Ayuda</h1>
 <?php
-$seccion = $_GET['seccion'] ?? 'default';
+$seccion = $_POST['seccion'] ?? 'default';
 switch ($seccion) {
   case 'alquilervehiculos':
     echo '<a href="alquilervehiculos.php">← Volver a Productos</a>';

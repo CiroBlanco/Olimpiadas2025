@@ -55,8 +55,9 @@ if ($fila = mysqli_fetch_assoc($consulta)) {
     echo "<h2>Tus Productos😍</h2>";
     echo "Usuario: " . $fila['id_usuario'] . "<br>";
     echo "Producto: " . $fila['id_producto'] . "<br>";
+    
 } else {
-    //echo "Usuario no encontrado.";
+    echo "Usuario no encontrado.";
 }
 ?>
 <form action="agregar_producto_carrito.php" method="post"> 

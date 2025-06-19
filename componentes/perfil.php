@@ -39,8 +39,6 @@ session_start();
     <h1 class="titulos">Tu Perfil</h1>
 <div class="contenedorperfil">
 <?php
-include('conexion.php');
-session_start();
 if (!isset($_SESSION['id_usuario'])) {
     echo
     "<p> Debes registrarte e iniciar sesión en el sitio </p>";

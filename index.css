@@ -105,6 +105,8 @@ nav a:hover{
 }
 .tituloimg
 {
+  font-size: 150%;
+  width: 100%;
  background-color: rgb(246, 232, 130);
 color: rgb(136, 130, 130); 
 text-align: center;
@@ -328,6 +330,8 @@ height: 30%;
   margin: 15px;
   max-width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  grid-template-columns: repeat(4, 1fr);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
   border: 2px solid black;
@@ -536,6 +540,7 @@ footer .derechos{
  background-color:rgb(250, 176, 102);
 }
 .contenedor{
+
   position: relative;
   border-radius: 10px;
   background-color:rgb(255, 202, 150) ;
@@ -602,4 +607,42 @@ footer .derechos{
   text-align: center;
   line-height: 50px;
   text-decoration: none;
+}
+.titulodescripcion
+{
+padding: 30px 10px 10px 20px;
+  margin-top: 45px;
+  font-size: 50px;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(136, 130, 130);
+}
+.imgviaje{
+  width: 20%;
+  height: 20%;
+}
+.descripcionp
+{
+  background-color:antiquewhite;
+  margin-top: 45px;
+  font-size: 27px;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(136, 130, 130);
+  font-weight: bold;
+}
+.adescripcion
+{
+background-color: white; border: 2px solid #f1ce9a;
+ background: #e68a00; color: white;
+ border: none; 
+  color: black; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  transition: 0.3s ease-in-out;
+}
+.descripcion
+{
+  align-items: center;
 }
