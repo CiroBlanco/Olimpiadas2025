@@ -1,5 +1,7 @@
 <?php
+session_start();
 include('conexion.php');
+if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1)
 $nombre = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
 $precio_unitario = $_POST['precio_unitario'];

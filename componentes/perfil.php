@@ -55,6 +55,7 @@ if (!isset($_SESSION['id_usuario'])) {
     echo "Monto: " . $fila['monto'] . "<br>";
     echo "Fecha pedido: " . $fila['fecha_pedido'] . "<br>";
     echo "<a class=btnperfil href='../componentesinicio/cerrarsesion.php'>Cerrar Sesion</a>";
+    echo "<a href='../componentesinicio/cerrarsesion.php'>Cerrar Sesion</a>";
 }else{ 
     echo'<p class="titulos"><strong>No tienes pedidos pendientes</strong></p>';
     echo"<a class=btnperfil href=../componentesinicio/cerrarsesion.php>Cerrar Sesion</a>";
