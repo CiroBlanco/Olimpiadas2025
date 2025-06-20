@@ -2,7 +2,6 @@
 session_start();
 include('conexion.php');
 // Verifica si hay sesión
-
 if (!isset($_SESSION['usuario'])) {
     echo "<div class='perfil'>Para comprar en Tecno Travel, debes registrarte e iniciar sesion😉✈️</div>";
     echo"<a class=btnperfil href=../login_registro/formulario_registrarse.php>Registrate Ahora 😊</a>";

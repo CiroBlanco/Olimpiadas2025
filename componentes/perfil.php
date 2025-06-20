@@ -52,7 +52,7 @@ if (!isset($_SESSION['id_usuario'])) {
     echo "<h2>Perfil del Usuario</h2>";
     echo "Pedido Nº: " . $fila['id_pendientes'] . "<br>";
     echo "Monto: " . $fila['monto'] . "<br>";
-    echo "Fecha pedido: " . $fila['fecha'] . "<br>";
+    echo "Fecha pedido: " . $fila['fecha_pedido'] . "<br>";
     echo "<a href='../componentesinicio/cerrarsesion.php'>Cerrar Sesion</a>";
 }else{ 
     echo'<p class="titulos"><strong>No tienes pedidos pendientes</strong></p>';
