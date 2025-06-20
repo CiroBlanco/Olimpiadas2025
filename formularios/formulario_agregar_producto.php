@@ -27,7 +27,7 @@ include('../componentes/conexion.php');
 
      <div class="campo">
         <label for="precio_unitario">Precio Unitario:</label>
-        <input required type="text" name="precio_unitario" id="precio_unitario" placeholder="" required autocomplete="off">
+        <input required type="number" name="precio_unitario" id="precio_unitario" placeholder="" required autocomplete="off">
      </div>
     <div class="campo">
         <label for="tipo">Tipo Producto:</label>
