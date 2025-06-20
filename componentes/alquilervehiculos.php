@@ -2,11 +2,12 @@
 include('conexion.php');
 $sql = "SELECT * FROM productos WHERE id_tipo = 2";
 $resultado = mysqli_query($conexion, $sql);
-
 if (!$resultado) {
     die("Error en la consulta: " . mysqli_error($conexion));
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,7 @@ if (!$resultado) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alquiler Vehiculos</title>
         <link rel="stylesheet" href="../index.css">
+        
 </head>
 <body>
 <?php
