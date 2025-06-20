@@ -22,12 +22,7 @@ while ($usuario = mysqli_fetch_assoc($usuarios)) {
     $nombre = $usuario['nombre'];
     $email = $usuario['email'];
 
-    $pedidos_query = mysqli_query($conexion, "
-        SELECT producto, cantidad, estado
-        FROM pedidos_pendientes
-        WHERE id_usuario = $id_usuario
-    ");
-
+    $pedidos_query = mysqli_query($conexion, "SELECT * FROM pedidos_pendientes WHERE id_usuario = $id_usuario");
     if (!$pedidos_query) {
         die("Error en consulta de pedidos: " . mysqli_error($conexion));
     }
