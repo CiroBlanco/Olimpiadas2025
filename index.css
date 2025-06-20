@@ -634,16 +634,8 @@ background-color: white; border: 2px solid #f1ce9a;
 {
   align-items: center;
 }
-.contenedorcarrito{
-  background-color:rgb(255, 245, 166);
-  width: 50%;
-  height: 100%;
-  text-align: center;
-  position: relative;
-  align-self: center;
-  border:4px solid #756d6d;
-  border-radius: 30px;
-}
+
+  
 input[type="submit"].finalizarcompra{
   background-color: white;
   color:rgb(0, 0, 0) ;
@@ -657,6 +649,7 @@ input[type="submit"].finalizarcompra{
   justify-content: center;
   text-decoration: none;
   transform: translateX(100%);
+  float: inline-end;
 }
 input[type="submit"].finalizarcompra:hover{
   background-color: rgb(133, 253, 117);

@@ -50,6 +50,7 @@ if (!isset($_SESSION['id_usuario'])) {
     exit;
 }?>
 <?php
+echo'<div class="contenedoritems">';
 $id_usuario = $_SESSION['id_usuario'];
 $consulta = mysqli_query($conexion, "SELECT * FROM carrito WHERE id_usuario = $id_usuario");
 if (mysqli_num_rows($consulta)>0) {
@@ -67,7 +68,7 @@ if (mysqli_num_rows($consulta)>0) {
         </div>
         </div>";
  
-
+echo'</div>';
     }
 }else {
     //no hay productos
@@ -77,6 +78,9 @@ if (mysqli_num_rows($consulta)>0) {
 </form> 
 <form action="finalizarcompra.php" method="POST">
 <input type="submit" class="finalizarcompra"value="Finalizar Compra">
+</form>
+<form action="vaciar_carrito.php" method="post">
+ <button type="submit" class="finalizarcompra" value="Vaciar Carrito">Vaciar carrito</button>
 </form>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
