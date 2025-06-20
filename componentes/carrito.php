@@ -41,6 +41,7 @@ session_start();
 <p class="titulos">Tus Productos</p>
 <form action="agregar_producto_carrito.php" method="post">
 <input type="hidden" name="id_producto" value="Producto">
+<a href="ayuda.php"class="boton-ayuda" title="Ayuda">?</a>
 <?php
 if (!isset($_SESSION['id_usuario'])) {
     echo

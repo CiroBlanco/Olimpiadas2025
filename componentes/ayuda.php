@@ -7,28 +7,50 @@
     <title>Ayuda</title>
 </head>
 <body>
-    <h1>Ayuda</h1>
-<?php
-$seccion = $_POST['seccion'] ?? 'default';
-switch ($seccion) {
-  case 'alquilervehiculos':
-    echo '<a href="alquilervehiculos.php">← Volver a Productos</a>';
-    break;
+  <h1 class="titulos">Arma tu viaje soñado con Tecno Travel✈️</h1>
+<button class="botonvideo"onclick="abrirModal()">Video del funcionamiento de Tecno Travel📽️</button>
+<div id="miModal" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <video id="videoModal" controls>
+        <source src="" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+     
+    </div>
+    
+  </div> 
+  <div class="contenedorayuda"> 
+  <p class="descripcionp">Aca encontraras toda la ayuda necesaria sobre nuestra pagina <br>
+    🆘En la parte superior de la pantalla aparecera el boton "Video del funcionamiento de Tecno Travel" <br>
+    🆘Al presionarlos te llevara al video-tutorial que armamos para que no te quedes con dudas <br>
+    🆘Alli explica paso por paso como comprar,registrarse y ver tu perfil y carrito <br>
+    </p>
+    </div>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+     <?php include('../componentesinicio/footer.php');?> 
+<script>
+    function abrirModal() {
+      document.getElementById('miModal').style.display = 'block';
+      document.getElementById('videoModal').play();
+    }
 
-  case 'estadias':
-    echo "<p>Esta es la vista del carrito. Podés revisar, eliminar productos o finalizar la compra.</p>";
-    echo '<a href="estadias.php">← Volver al Carrito</a>';
-    break;
+    function cerrarModal() {
+      const modal = document.getElementById('miModal');
+      const video = document.getElementById('videoModal');
+      modal.style.display = 'none';
+      video.pause();
+      video.currentTime = 0;
+    }
 
-  case 'perfil':
-    echo "<p>Desde tu perfil podés modificar tus datos personales, cambiar la contraseña y ver tus pedidos anteriores.</p>";
-    echo '<a href="componentes/pasajesaereos.php">← Volver al Perfil</a>';
-    break;
-    case 'pasajes':
-  echo "<p>En esta sección podés enviarnos tus dudas, sugerencias o reclamos. Usá el formulario.</p>";
-  echo '<a href="pasejesiternacionales.php">← Volver a Contacto</a>';
-  break;
-}
-?>
+    // Cerrar modal si se hace clic fuera del contenido
+    window.onclick = function(event) {
+      const modal = document.getElementById('miModal');
+      if (event.target == modal) {
+        cerrarModal();
+      }
+    }
+  </script>
 </body>
 </html>

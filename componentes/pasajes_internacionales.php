@@ -80,11 +80,11 @@ echo'<header class="header">
    <div class="tarjeta">
 <form action="editar.php" method="post">
         <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-        <input type="submit" value="Editar">
+        <input type="submit" value="Editar" >
         </form>
        <form action="eliminar.php" method="post" >
         <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-        <ion-icon name="trash-outline"></ion-icon><input type="submit" value="Eliminar">
+       <input type="submit" value="Eliminar" >
        </form>
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
@@ -92,7 +92,10 @@ echo'<header class="header">
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
 <form action="agregar_producto_carrito.php" method="post">
             <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-            <input type="submit" class="agregarcarrito" value="Agregar al carrito <ion-icon name='cart-outline'>">
+            <div class="botonesadmin">
+            <input type="submit" class="agregarcarrito" value="Agregar al carrito"class=>
+
+            </div>
         </form>
     </div>
 <?php endwhile; ?>
