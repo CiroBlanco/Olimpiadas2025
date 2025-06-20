@@ -50,15 +50,18 @@ if (!isset($_SESSION['id_usuario'])) {
     exit;
 }if( $fila = mysqli_fetch_assoc($consulta)){ 
     echo "<h2>Perfil del Usuario</h2>";
+    echo "<h3>Pedidos Pendientes</h3>";
     echo "Pedido Nº: " . $fila['id_pendientes'] . "<br>";
     echo "Monto: " . $fila['monto'] . "<br>";
-    echo "Fecha pedido: " . $fila['fecha'] . "<br>";
-    echo "<a href='../componentesinicio/cerrarsesion.php'>Cerrar Sesion</a>";
+    echo "Fecha pedido: " . $fila['fecha_pedido'] . "<br>";
+    echo "<a class=btnperfil href='../componentesinicio/cerrarsesion.php'>Cerrar Sesion</a>";
 }else{ 
     echo'<p class="titulos"><strong>No tienes pedidos pendientes</strong></p>';
     echo"<a class=btnperfil href=../componentesinicio/cerrarsesion.php>Cerrar Sesion</a>";
 }
-
+if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+   echo'<a href="administrar_pedidos_pendientes.php" class="btnadministrar">Administrar Pedidos</a>';
+   }
 ?>
 <a href="ayuda.php"class="boton-ayuda" title="Ayuda">?</a>
 </div>
