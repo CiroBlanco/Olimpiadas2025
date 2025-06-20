@@ -76,10 +76,7 @@ if (mysqli_num_rows($consulta)>0) {
 ?>
 </form> 
 <form action="finalizarcompra.php" method="POST">
-<input type="submit" value="Finalizar Compra">
-</form>
-<form action="enviarcorreo.php" method="POST">
-<input type="submit" value="correo">
+<input type="submit" class="finalizarcompra"value="Finalizar Compra">
 </form>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

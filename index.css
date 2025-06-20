@@ -638,29 +638,27 @@ background-color: white; border: 2px solid #f1ce9a;
   background-color:rgb(255, 245, 166);
   width: 50%;
   height: 100%;
-text-align: center;
+  text-align: center;
   position: relative;
   align-self: center;
   border:4px solid #756d6d;
   border-radius: 30px;
 }
-.finalizarcompra{
+input[type="submit"].finalizarcompra{
   background-color: white;
   color:rgb(0, 0, 0) ;
   width:20%;
-  height:7%;
   border-radius:18px;
   border: 2px solid rgb(120, 118, 118);
   font-family:Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 900;
   text-align: center;
   justify-content: center;
-  align-self: center;
-  align-content: center;
   text-decoration: none;
-  display:flex;
+  transform: translateX(100%);
 }
-.finalizarcompra:hover{
+input[type="submit"].finalizarcompra:hover{
   background-color: rgb(133, 253, 117);
 }
 .modal {
