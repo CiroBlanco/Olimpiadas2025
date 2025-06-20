@@ -13,23 +13,21 @@
 <?php
 session_start();
 include('conexion.php');
-if (!isset($_SESSION['admin'])) {
-    header("Location: login_registro/formulario_iniciarsesion.php");
-    exit();
-}
+//if (!isset($_SESSION['admin'])) {
+   // header("Location: login_registro/formulario_iniciarsesion.php");
+  //  exit();
+//}
 if (isset($_POST['id'])) {
     $id = intval($_POST['id']);
     $query = "DELETE FROM productos WHERE id = $id";
 
-    if (mysqli_query($conexion, $query)) {
+if (mysqli_query($conexion, $query)) {
         echo "Producto eliminado correctamente.";
-    } else {
-        echo "Error al eliminar el producto: " . mysqli_error($conexion);
-    }
-
-    // Redirigir de vuelta a la página de productos
-    header("Location: admin_productos.php"); // Ajustalo según tu archivo
-    exit();
+}else{
+    echo "Error al eliminar el producto: " . mysqli_error($conexion);
+}
+header("Location: ../index.php"); 
+ exit();
 }
 $resultado = mysqli_query($conexion, "SELECT * FROM productos");
 

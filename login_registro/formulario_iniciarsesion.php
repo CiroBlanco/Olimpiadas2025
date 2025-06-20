@@ -30,8 +30,6 @@
                 </li>
                 <li><a href="formulario_registrarse.php">Registrarse</a></li>
                 <li><a href="#">Iniciar Sesion</a></li>
-                <li><a href="../componentes/perfil.php" class="perfilboton"> <ion-icon name="person-circle-outline"></ion-icon></a></li>
-                <li><a href="../componentes/carrito.php" class="carrito"> <ion-icon name="cart-outline"></ion-icon></a></li>
             </ul>
        </nav>
 </header>

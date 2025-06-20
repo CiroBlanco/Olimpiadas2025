@@ -73,19 +73,27 @@ echo'<header class="header">
 }
 ?>
 
-    <h1 class="titulos"> Pasajes Internacionales</h1>
-    <div class="contenedor">
-    <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
-   <?php while($producto = mysqli_fetch_assoc($resultado)):?>
+<h1 class="titulos"> Pasajes Internacionales</h1>
+<div class="contenedor">
+<?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+   echo'<a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>';
+}
+while($producto = mysqli_fetch_assoc($resultado)):?>
    <div class="tarjeta">
 <form action="editar.php" method="post">
-        <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-        <input type="submit" value="Editar" >
-        </form>
-       <form action="eliminar.php" method="post" >
-        <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-       <input type="submit" value="Eliminar" >
-       </form>
+        <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) { ?>
+            <form action="editar.php" method="post">
+                <input hidden type="number" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
+                <ion-icon name="brush-outline"></ion-icon>
+                <input type="submit" class="botonadmin" value="Editar">
+            </form>
+
+            <form action="eliminar.php" method="post">
+                <input hidden type="number" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
+                <ion-icon name="trash-outline"></ion-icon>
+                <input type="submit" class="botonadmin" value="Eliminar">
+            </form>
+        <?php } ?>
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>

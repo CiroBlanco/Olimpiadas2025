@@ -2,11 +2,11 @@
 session_start();
 include('conexion.php');
 
-
-//if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
-    //echo "Acceso denegado. Solo administradores pueden editar productos.";
-    //exit;
-//}
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
+    echo "Acceso denegado. Solo administradores pueden editar productos.";
+    header("Location ../index.php");
+    exit;
+}
 
 if (isset($_POST['id_producto'])) {
     $id_producto = (int) $_POST['id_producto'];
@@ -55,7 +55,7 @@ $producto = mysqli_fetch_assoc($resultado);
         <textarea name="descripcion" required><?= htmlspecialchars($producto['descripcion']) ?></textarea><br><br>
     </div>
     <div class="campo">
-        <label>Precio:</label><br>
+        <label>Precio Unitario:</label><br>
         <input type="number"  name="precio_unitario" value="<?= $producto['precio_unitario'] ?>" required><br><br>
     </div>
     <input type="reset" value="Cancelar">

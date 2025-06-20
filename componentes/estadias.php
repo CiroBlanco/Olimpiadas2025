@@ -80,24 +80,31 @@ echo'<header class="header">
      <h1 class="titulos"> Estadias</h1>
 
     <div class="contenedor">
-    <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
-   <?php while($producto = mysqli_fetch_assoc($resultado)):?>
+    <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+   echo'<a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>';
+   }
+    while($producto = mysqli_fetch_assoc($resultado)):?>
     <div class="tarjeta">
-    <form action="editar.php" method="post">
-        <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-        <input type="submit" value="Editar">
-        </form>
-       <form action="eliminar.php" method="post" >
-        <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-        <ion-icon name="trash-outline"></ion-icon><input type="submit" value="Eliminar">
-       </form>
+    <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) { ?>
+            <form action="editar.php" method="post">
+                <input hidden type="number" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
+                <ion-icon name="brush-outline"></ion-icon>
+                <input type="submit" class="botonadmin" value="Editar">
+            </form>
+
+            <form action="eliminar.php" method="post">
+                <input hidden type="number" name="id_producto" value="<?php echo $producto['id_producto']; ?>">
+                <ion-icon name="trash-outline"></ion-icon>
+                <input type="submit" class="botonadmin" value="Eliminar">
+            </form>
+        <?php } ?>
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
         <form action="agregar_producto_carrito.php" method="post">
             <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-            <input type="submit" class="agregarcarrito" value="Agregar al carrito <ion-icon name='cart-outline'>">
+            <ion-icon name="cart-outline"></ion-icon><input type="submit" class="agregarcarrito" value="Agregar al carrito">
         </form>
     </div>
 <?php endwhile; ?>
