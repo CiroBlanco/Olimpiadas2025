@@ -37,8 +37,8 @@ session_start();
        </nav>
 </header>
 <h2 class="titulos">Tu Carrito</h2>
-<div class="contenedorcarrito"></div>
-<p class="texto">Tus Productos</p>
+<div class="contenedorcarrito">
+<p class="titulos">Tus Productos</p>
 <form action="agregar_producto_carrito.php" method="post">
 <input type="hidden" name="id_producto" value="Producto">
 <?php
@@ -57,18 +57,23 @@ if (mysqli_num_rows($consulta)>0) {
         $consulta_item = "SELECT * FROM productos WHERE id_producto ='".$resultados['id_producto']."'";
         $resultado_item = mysqli_query($conexion,$consulta_item);
         $producto = mysqli_fetch_assoc($resultado_item);
-        echo "<div class='tarjeta'>
-        <h3>Producto id: ".$resultados['id_producto']."</h3>
+        echo"
+        <div class='tarjeta'>
+        <h3>Producto#".$resultados['id_producto']."</h3>
         <p><strong>Nombre: ".$producto['nombre']."</p>
         <p><strong>Descripción: ".$producto['descripcion']."</p>
         <p class='precio'><strong>Precio Unitario:</strong> $".$producto['precio_unitario']."</p>
-</div>";
+        </div>
+        </div>";
+ 
+
     }
 }else {
     //no hay productos
-    echo "sin productos en el carrito :c";
+    echo "sin productos en el carrito";
 }
 ?>
+ <a class='finalizarcompra' href='enviarcorreo.php'>FINALIZAR COMPRA</a> 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

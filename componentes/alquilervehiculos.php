@@ -83,9 +83,9 @@ if(!isset($_SESSION['usuario'])){
             <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
         <input type="submit" value="Editar">
         </form>
-       <form action="eliminar.php" method="post">
+       <form action="eliminar.php" method="post" >
         <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
-        <input type="submit" value="Eliminar ">
+        <ion-icon name="trash-outline"></ion-icon><input type="submit" value="Eliminar">
        </form>
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>

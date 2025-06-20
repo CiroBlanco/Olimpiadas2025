@@ -47,13 +47,15 @@ if (!isset($_SESSION['id_usuario'])) {
     "<p> Debes registrarte e iniciar sesión en el sitio </p>";
     echo"<a class=btnperfil href=../login_registro/formulario_registrarse.php>Registrate Ahora 😊</a>";
     exit;
-}else{
-    $fila = mysqli_fetch_assoc($consulta);
+}if( $fila = mysqli_fetch_assoc($consulta)){ 
     echo "<h2>Perfil del Usuario</h2>";
     echo "Pedido Nº: " . $fila['id_pendientes'] . "<br>";
     echo "Monto: " . $fila['monto'] . "<br>";
     echo "Fecha pedido: " . $fila['fecha'] . "<br>";
     echo "<a href='../componentesinicio/cerrarsesion.php'>Cerrar Sesion</a>";
+}else{ 
+    echo'<p class="titulos"><strong>No tienes pedidos pendientes</strong></p>';
+    echo"<a class=btnperfil href=../componentesinicio/cerrarsesion.php>Cerrar Sesion</a>";
 }
 
 ?>

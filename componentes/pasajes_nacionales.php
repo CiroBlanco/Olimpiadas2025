@@ -79,10 +79,22 @@ if(!isset($_SESSION['usuario'])){
     <a href="../formularios/formulario_agregar_producto.php" class="agregar"><ion-icon name="add-outline"></ion-icon></a>
    <?php while($producto = mysqli_fetch_assoc($resultado)):?>
     <div class="tarjeta">
+        <form action="editar.php" method="post">
+            <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
+        <input type="submit" value="Editar">
+        </form>
+       <form action="eliminar.php" method="post" >
+        <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
+        <ion-icon name="trash-outline"></ion-icon><input type="submit" value="Eliminar">
+       </form>
         <h3>Producto #<?= $producto['id_producto'] ?></h3>
         <p><strong>Nombre:</strong> <?= htmlspecialchars($producto['nombre']) ?></p>
         <p><strong>Descripción:</strong> <?= htmlspecialchars($producto['descripcion']) ?></p>
         <p class="precio"><strong>Precio Unitario:</strong> $<?= number_format($producto['precio_unitario'], 2) ?></p>
+        <form action="agregar_producto_carrito.php" method="post">
+            <input hidden type="number" name="id_producto" value=<?php echo "'".$producto['id_producto']."'"?>>
+            <input type="submit" class="agregarcarrito" value="Agregar al carrito <ion-icon name='cart-outline'>">
+        </form>
     </div>
 <?php endwhile; ?>
 <a href="ayuda.php"class="boton-ayuda" title="Ayuda">?</a>
