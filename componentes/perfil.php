@@ -37,6 +37,7 @@ session_start();
        </nav>
 </header>
     <h1 class="titulos">Tu Perfil</h1>
+    
 <div class="contenedorperfil">
 <?php
 $id_usuario = $_SESSION['id_usuario'];
