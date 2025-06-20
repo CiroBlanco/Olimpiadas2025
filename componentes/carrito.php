@@ -75,7 +75,7 @@ if (mysqli_num_rows($consulta)>0) {
 }
 ?>
 </form> 
-<form action="pedidos_pendientes.php" method="POST">
+<form action="finalizarcompra.php" method="POST">
 <input type="submit" value="Finalizar Compra">
 </form>
 <form action="enviarcorreo.php" method="POST">

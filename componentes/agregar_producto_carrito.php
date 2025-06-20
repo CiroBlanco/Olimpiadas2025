@@ -8,16 +8,19 @@ if (!isset($_SESSION['usuario'])) {
     echo"<a class=btnperfil href=../login_registro/formulario_registrarse.php>Registrate Ahora 😊</a>";
     exit;
 }else {
-    // Verificamos que venga el id_producto por POST (o por GET si lo preferís)
-    if (!isset($_POST['id_producto'])) {
+if (!isset($_POST['id_producto'])) {
         echo "<div class='perfil'>No se recibió ningún producto</div>";
         exit;
-    }else{
+}else{
         $id_usuario = $_SESSION['id_usuario'];
         $id_producto = $_POST['id_producto'];
-        // Insertar en la base de datos
         mysqli_query($conexion, "INSERT INTO carrito (id_usuario, id_producto) VALUES ($id_usuario, $id_producto)");
-        header("Location: carrito.php");
-    }
 }
+}
+if (!isset($_SESSION['carrito'])) {
+    $_SESSION['carrito'] = [];
+}
+$_SESSION['carrito'][] = $id_producto;
+header("Location: carrito.php");
+exit;
 ?>
