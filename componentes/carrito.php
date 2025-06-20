@@ -72,7 +72,6 @@ echo'</div>';
     }
 }else {
     //no hay productos
-    echo "sin productos en el carrito";
 }
 ?>
 </form> 

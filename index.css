@@ -508,7 +508,7 @@ footer .derechos{
   width: 50%;
   text-align: center;
 }
-.btnperfil {
+.btnperfil{
   background-color: rgb(255, 202, 150);
   color:rgb(120, 118, 118) ;
   width:20%;
@@ -517,8 +517,7 @@ footer .derechos{
   border: 2px solid rgb(120, 118, 118);
   font-family:Arial, Helvetica, sans-serif;
   font-size: 15px;
-  display:block;
-position: relative;
+  position: relative;
   text-align: center;
   justify-content: center;
   text-decoration: none;
@@ -640,16 +639,16 @@ input[type="submit"].finalizarcompra{
   background-color: white;
   color:rgb(0, 0, 0) ;
   width:20%;
+position: absolute;
   border-radius:18px;
   border: 2px solid rgb(120, 118, 118);
   font-family:Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 900;
   text-align: center;
-  justify-content: center;
   text-decoration: none;
-  transform: translateX(100%);
-  float: inline-end;
+  top: 100;
+  left: 20%;
 }
 input[type="submit"].finalizarcompra:hover{
   background-color: rgb(133, 253, 117);
@@ -729,4 +728,37 @@ background-color: green;
 width: 100%;
 text-align: center;
 color: black;
+}
+.btnadministrar{
+  background-color:black;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btnadministrar:hover{
+  opacity: 0.5;
+  border: 2px solid goldenrod;
+}
+button[type="submit"].finalizarcompra
+{
+  background-color: white;
+  color:rgb(0, 0, 0) ;
+  width:10%;
+  height: 10%;
+  border-radius:18px;
+  border: 2px solid rgb(120, 118, 118);
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  top: 100%;
+
 }
