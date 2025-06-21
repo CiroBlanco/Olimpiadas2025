@@ -104,6 +104,7 @@ while ($usuario = mysqli_fetch_assoc($usuarios)) {
     } catch (Exception $e) {
         echo "❌ Error al enviar a $email: {$mail->ErrorInfo}<br>";
     }
+    
 }
 ?>
 
