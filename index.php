@@ -180,6 +180,7 @@ Visitanos en nuestras redes y enterate de todas las novedades <br>
     <?php
      include('./componentesinicio/footer.php')
      ?>
+     <a href="./componentes/ayuda.php"class="boton-ayuda" title="Ayuda">?</a>
      <script src="js.js"></script>
      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

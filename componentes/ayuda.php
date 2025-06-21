@@ -18,7 +18,6 @@
       </video>
      
     </div>
-    
   </div> 
   <div class="contenedorayuda"> 
   <p class="descripcionp">Aca encontraras toda la ayuda necesaria sobre nuestra pagina <br>
@@ -27,6 +26,7 @@
     🆘Alli explica paso por paso como comprar,registrarse y ver tu perfil y carrito <br>
     </p>
     </div>
+      <a  class="btnayuda"href="../index.php">INICIO</a>
      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
      <?php include('../componentesinicio/footer.php');?> 
