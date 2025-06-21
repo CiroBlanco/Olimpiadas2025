@@ -13,10 +13,10 @@
 <?php
 session_start();
 include('conexion.php');
-//if (!isset($_SESSION['admin'])) {
-   // header("Location: login_registro/formulario_iniciarsesion.php");
-  //  exit();
-//}
+if (!isset($_SESSION['admin'])) {
+   header("Location: login_registro/formulario_iniciarsesion.php");
+    exit();
+}
 if (isset($_POST['id'])) {
     $id = intval($_POST['id']);
     $query = "DELETE FROM productos WHERE id = $id";

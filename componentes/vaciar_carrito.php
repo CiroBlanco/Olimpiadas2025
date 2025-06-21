@@ -1,11 +1,10 @@
 <?php
-session_start(); // Asegurate de tener la sesión iniciada
+session_start(); 
 include('conexion.php');
-// ID del usuario (esto depende de cómo manejes login)
+
 $id_usuario = $_SESSION['id_usuario'] ?? null;
 
 if ($id_usuario) {
-    // Eliminar todos los productos del carrito del usuario
     $sql = "DELETE FROM carrito WHERE id_usuario = ?";
     $stmt = $conexion->prepare($sql);
     $stmt->bind_param("i", $id_usuario);

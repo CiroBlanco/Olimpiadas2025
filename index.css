@@ -1,4 +1,4 @@
-html, body {
+html, body{
   height: 100%; 
   margin: 0;
   padding: 0;     
@@ -9,8 +9,7 @@ html, body {
 body{
 background-color: rgb(255, 242, 227);
 }
-.titulos
-{
+.titulos{
   padding: 30px 10px 10px 20px;
   margin-top: 50px;
   font-size: 3em;
@@ -28,60 +27,59 @@ header nav{
   top:0;
 }
 nav ul{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    justify-content: space-around;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  justify-content: space-around;
 }
 nav li{
-    position: relative;
-    height:50%;
-    top:0%;
-    left:0;  
-   
+  position: relative;
+  height:50%;
+  top:0%;
+  left:0;  
 }
 nav a{
-    display:inline-block;
-    height: 100%;
-    width: 70%;
-    padding: 0 20%;
-    text-decoration: none;
-    display: flex;
-    align-self: center;
-    align-items: center;
-    align-content: center;
-    color:rgb(38, 37, 37);
-    font-size: 100%;
-    background-color: rgb(246, 232, 130);
-    opacity: 0.6;
-    transition: 0.3s;
-    transition: color 0.3s;  
-    border: 2px solid transparent;
-    transition: border 0.3s, color 0.3s;
+  display:inline-block;
+  height: 100%;
+  width: 70%;
+  padding: 0 20%;
+  text-decoration: none;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  color:rgb(38, 37, 37);
+  font-size: 100%;
+  background-color: rgb(246, 232, 130);
+  opacity: 0.6;
+  transition: 0.3s;
+  transition: color 0.3s;  
+  border: 2px solid transparent;
+  transition: border 0.3s, color 0.3s;
 }
 nav ul li a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px;
-    transition: 0,2s;
-    margin: 2px 25px;
-    padding: 8px 15px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease 0s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  transition: 0,2s;
+  margin: 2px 25px;
+  padding: 8px 15px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease 0s;
 }
 nav a:hover{
-    opacity: 1;
-    border:2px solid black;
+  opacity: 1;
+  border:2px solid black;
 }
 .logo{
-    height: 15%;
-    width:15%;
+  height: 15%;
+  width:15%;
 }
 .header nav{
   position: fixed;
@@ -97,21 +95,20 @@ nav a:hover{
   border: 1px solid black;
 }
 .imagenesinicio{
-    width: 50%;
-    height: 50%;
-   display: flex;
-   grid-template-columns: repeat(3, 1fr);
-    gap: 20%;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20%;
 }
-.tituloimg
-{
+.tituloimg{
   font-size: 150%;
   width: 100%;
- background-color: rgb(246, 232, 130);
-color: rgb(136, 130, 130); 
-text-align: center;
+  background-color: rgb(246, 232, 130);
+  color: rgb(136, 130, 130); 
+  text-align: center;
 }
-input[type=text], select {
+input[type=text], select{
   width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -121,7 +118,7 @@ input[type=text], select {
   box-sizing: border-box;
   background-color:  rgb(255, 242, 227);
 }
-input[type=password], select {
+input[type=password], select{
   width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -129,9 +126,9 @@ input[type=password], select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
- background-color:  rgb(255, 242, 227);
+  background-color:  rgb(255, 242, 227);
 }
-input[type=email], select {
+input[type=email], select{
   width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -155,7 +152,6 @@ input[type=submit]{
  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
   color: rgb(136, 130, 130);
 }
-
 input[type=submit]:hover {
   background-color:rgb(238, 222, 104) ;
 }
@@ -190,7 +186,7 @@ input[type=reset]:hover {
 }
 input[type=reset] { 
   position: relative;
-bottom: 0%;
+  bottom: 0%;
   width: 25%;
   background-color: rgb(246, 232, 130) ;
   color:white;
@@ -200,35 +196,24 @@ bottom: 0%;
   border-radius: 4px;
   cursor: pointer;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-color: rgb(136, 130, 130);  
+  color: rgb(136, 130, 130);  
 }
-
-/*Carrusel*/
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
+.container{
   position: relative;
 }
-
-/* Hide the images by default */
-.mySlides {
+.mySlides{
   display: none;
 }
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
+.cursor{
   cursor: pointer;
 }
-
 .container{
   width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
-
-/* Next & previous buttons */
 .prev,
-.next {
+.next{
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -242,40 +227,31 @@ color: rgb(136, 130, 130);
   user-select: none;
   -webkit-user-select: none;
 }
-
-/* Position the "next button" to the right */
-.next {
+.next{
   right: 0;
   border-radius: 3px 0 0 3px;
 }
-
 .prev{
   left: 0;
 }
-
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
-.next:hover {
+.next:hover{
   background-color: rgba(0, 0, 0, 0.8);
 }
-
-/* Number text (1/3 etc) */
-.numbertext {
+.numbertext{
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
 }
-
-/* Container for image text */
-.caption-container {
+.caption-container{
   text-align: center;
   background-color: #222;
   padding: 2px 16px;
   color: white;
 }
-.row:after {
+.row:after{
   content: "";
   display: table;
   clear: both;
@@ -284,18 +260,15 @@ color: rgb(136, 130, 130);
   display: flex;
   align-items: center;
 }
-.column {
+.column{
   float: left;
   width: 16.66%;
 }
-
-/* Add a transparency effect for thumnbail images */
-.demo {
+.demo{
   opacity: 0.6;
 }
-
 .active,
-.demo:hover {
+.demo:hover{
   opacity: 1;
 }
 .auto
@@ -310,7 +283,7 @@ img
 width: 30%;
 height: 30%;
 }
-.tarjetas {
+.tarjetas{
   max-width: 30%;
   margin: 1em auto;
   display: grid;
@@ -318,7 +291,7 @@ height: 30%;
   grid-gap: 20%;
 
 }
-.tarjeta {
+.tarjeta{
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -332,31 +305,31 @@ height: 30%;
   cursor: pointer;
   border: 2px solid black;
 }
-.tarjeta:hover {
+.tarjeta:hover{
   transform: translateY(-8px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 .tarjeta:hover .agregarcarrito{
   display: inline;
 }
-.tarjeta h3 {
+.tarjeta h3{
   font-size: 1.4rem;
   margin-bottom: 10px;
   color: #333;
   border-bottom: 1px solid black;
 }
-.tarjeta p {
+.tarjeta p{
   font-size: 1.2rem;
   color: #201f1f;
   font-style: italic;
   font-weight: 400;
   margin: 6px 0;
 }
-.tarjeta p strong {
+.tarjeta p strong{
   color: #222;
   font-weight: 700;
 }
-.tarjeta p.precio {
+.tarjeta p.precio{
   font-size: 1.2rem;
   color: #e67e22; 
   font-weight: 700;
@@ -410,11 +383,11 @@ height: 30%;
   background-color: rgb(246, 232, 130);
   opacity: 1;
 }
-.dropdown {
+.dropdown{
   position: relative;
   display: inline-block;
 }
-.dropdown-contenido {
+.dropdown-contenido{
     display: none; 
     position: absolute; 
     background-color: transparent; 
@@ -426,7 +399,7 @@ height: 30%;
     top: 100%; 
     border-radius: 10px; 
 }
-.dropdown-contenido a {
+.dropdown-contenido a{
   color: black;
   padding: 4px 10px;
   text-decoration: none;
@@ -527,7 +500,6 @@ footer .derechos{
  background-color:rgb(250, 176, 102);
 }
 .contenedor{
-
   position: relative;
   border-radius: 10px;
   background-color:rgb(255, 202, 150) ;
@@ -578,7 +550,7 @@ footer .derechos{
   opacity: 1.5;
   background-color: rgb(102, 231, 102);
 }
-.boton-ayuda {
+.boton-ayuda{
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -595,9 +567,8 @@ footer .derechos{
   line-height: 50px;
   text-decoration: none;
 }
-.titulodescripcion
-{
-padding: 30px 10px 10px 20px;
+.titulodescripcion{
+  padding: 30px 10px 10px 20px;
   margin-top: 45px;
   font-size: 50px;
   text-align: center;
@@ -608,8 +579,7 @@ padding: 30px 10px 10px 20px;
   width: 20%;
   height: 20%;
 }
-.descripcionp
-{
+.descripcionp{
   background-color:antiquewhite;
   margin-top: 45px;
   font-size: 27px;
@@ -618,19 +588,17 @@ padding: 30px 10px 10px 20px;
   color: rgb(136, 130, 130);
   font-weight: bold;
 }
-.adescripcion
-{
-background-color: white; border: 2px solid #f1ce9a;
- background: #e68a00; color: white;
- border: none; 
+.adescripcion{
+  background-color: white; border: 2px solid #f1ce9a;
+  background: #e68a00; color: white;
+  border: none; 
   color: black; 
   padding: 10px 20px; 
   cursor: pointer; 
   border-radius: 5px; 
   transition: 0.3s ease-in-out;
 }
-.descripcion
-{
+.descripcion{
   align-items: center;
 }
 input[type="submit"].finalizarcompra, input[type="submit"].vaciarcarrito{
@@ -730,10 +698,10 @@ input[type="submit"].botonadmin{
   cursor: pointer;
 }
 input[type="submit"].agregarcarrito{
-background-color: green;
-width: 100%;
-text-align: center;
-color: black;
+  background-color: green;
+  width: 100%;
+  text-align: center;
+  color: black;
 }
 .btnadministrar{
   background-color:black;

@@ -8,7 +8,6 @@ if (!isset($_SESSION['carrito']) || empty($_SESSION['carrito'])) {
 $id_usuario = $_SESSION['id_usuario'];
 $monto = 0;
 foreach ($_SESSION['carrito'] as $id_producto) {
-    // Consultar el precio de cada producto
     $consulta = "SELECT precio_unitario FROM productos WHERE id_producto = $id_producto";
     $resultado = mysqli_query($conexion, $consulta);
     if ($fila = mysqli_fetch_assoc($resultado)) {

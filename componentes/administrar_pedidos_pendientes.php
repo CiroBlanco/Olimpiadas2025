@@ -17,88 +17,73 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_pedido'], $_POST['
     $id_pedido = intval($_POST['id_pedido']);
     $nuevo_estado = $_POST['nuevo_estado'];
 
-    if ($nuevo_estado === 'entregado') {
-        // Obtener datos del pedido pendiente
-        $sql_get = "SELECT * FROM pedidos_pendientes WHERE id_pendientes = $id_pedido";
-        $res_get = mysqli_query($conexion, $sql_get);
+if ($nuevo_estado === 'entregado') {
+ $sql_get = "SELECT * FROM pedidos_pendientes WHERE id_pendientes = $id_pedido";
+ $res_get = mysqli_query($conexion, $sql_get);
 
-        if ($pedido = mysqli_fetch_assoc($res_get)) {
-            $id_usuario = $pedido['id_usuario'];
-            $monto = $pedido['monto'];
-            $fecha_pedido = $pedido['fecha_pedido'];
+ if ($pedido = mysqli_fetch_assoc($res_get)) {
+  $id_usuario = $pedido['id_usuario'];
+  $monto = $pedido['monto'];
+  $fecha_pedido = $pedido['fecha_pedido'];
 
-            // Insertar en pedidos entregados
-            $sql_insert = "INSERT INTO pedidos_entregados (id_usuario, monto, fecha_pedido)
-                           VALUES ('$id_usuario', '$monto', '$fecha_pedido')";
-            mysqli_query($conexion, $sql_insert);
-            $id_entregado = mysqli_insert_id($conexion);
+ $sql_insert = "INSERT INTO pedidos_entregados (id_usuario, monto, fecha_pedido) VALUES ('$id_usuario', '$monto', '$fecha_pedido')";
+ mysqli_query($conexion, $sql_insert);
+ $id_entregado = mysqli_insert_id($conexion);
 
-            // Obtener email y nombre del usuario para enviar correo
-            $sql_user = "SELECT nombre, email FROM usuario WHERE id_usuario = $id_usuario";
-            $res_user = mysqli_query($conexion, $sql_user);
-            $usuario = mysqli_fetch_assoc($res_user);
-            $nombre = $usuario['nombre'];
-            $email = $usuario['email'];
+ $sql_user = "SELECT nombre, email FROM usuario WHERE id_usuario = $id_usuario";
+ $res_user = mysqli_query($conexion, $sql_user);
+ $usuario = mysqli_fetch_assoc($res_user);
+ $nombre = $usuario['nombre'];
+ $email = $usuario['email'];
 
-            // Construir contenido del email
-            $contenido = "
-                <h3>Hola $nombre,</h3>
-                <p>Tu pedido con ID <strong>$id_pedido</strong> ha sido <strong>entregado</strong>.</p>
-                <p>Monto: $$monto<br>Fecha pedido: $fecha_pedido</p>
-                <p>Gracias por confiar en nosotros.</p>
+$contenido = "
+<h3>Hola $nombre,</h3>
+<p>Tu pedido con ID <strong>$id_pedido</strong> ha sido <strong>entregado</strong>.</p>
+<p>Monto: $$monto<br>Fecha pedido: $fecha_pedido</p>
+<p>Gracias por confiar en nosotros.</p>
             ";
+$mail = new PHPMailer(true);
+try {
+$mail->isSMTP();
+$mail->Host       = 'smtp.gmail.com';
+$mail->SMTPAuth   = true;
+$mail->Username   = 'tecnotravel2025@gmail.com';
+$mail->Password   = 'fzcd vtdu kvdt jutp'; 
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$mail->Port       = 587;
+$mail->setFrom('tecnotravel2025@gmail.com', 'Tecno Travel');
+$mail->addAddress($email, $nombre);
+$mail->isHTML(true);
+$mail->Subject = 'Tu pedido ha sido entregado';
+$mail->Body    = $contenido;
+$mail->send();
+$asunto = 'Pedido entregado';
 
-            // Enviar correo con PHPMailer
-            $mail = new PHPMailer(true);
-            try {
-                $mail->isSMTP();
-                $mail->Host       = 'smtp.gmail.com';
-                $mail->SMTPAuth   = true;
-                $mail->Username   = 'tecnotravel2025@gmail.com';
-                $mail->Password   = 'fzcd vtdu kvdt jutp'; // contraseña de app
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                $mail->Port       = 587;
-
-                $mail->setFrom('tecnotravel2025@gmail.com', 'Tecno Travel');
-                $mail->addAddress($email, $nombre);
-                $mail->isHTML(true);
-                $mail->Subject = 'Tu pedido ha sido entregado';
-                $mail->Body    = $contenido;
-
-                $mail->send();
-
-                // Guardar en tabla correos_enviados
-                $asunto = 'Pedido entregado';
-                $sql_insert_correo = "INSERT INTO correos_enviados (id_pedidos, id_usuario, asunto, cuerpo, fecha_envio)
+$sql_insert_correo = "INSERT INTO correos_enviados (id_pedidos, id_usuario, asunto, cuerpo, fecha_envio)
                                      VALUES (?, ?, ?, ?, NOW())";
-                $stmt = mysqli_prepare($conexion, $sql_insert_correo);
-                mysqli_stmt_bind_param($stmt, "iiss", $id_entregado, $id_usuario, $asunto, $contenido);
-                mysqli_stmt_execute($stmt);
+$stmt = mysqli_prepare($conexion, $sql_insert_correo);
+mysqli_stmt_bind_param($stmt, "iiss", $id_entregado, $id_usuario, $asunto, $contenido);
+mysqli_stmt_execute($stmt);
+echo "Pedido entregado y correo enviado a $email.<br>";
 
-                echo "✅ Pedido entregado y correo enviado a $email.<br>";
-
-            } catch (Exception $e) {
-                echo "❌ Error al enviar correo: {$mail->ErrorInfo}<br>";
-            }
-
-            // Borrar pedido pendiente (y detalles relacionados por ON DELETE CASCADE)
-            $sql_delete = "DELETE FROM pedidos_pendientes WHERE id_pendientes = $id_pedido";
-            mysqli_query($conexion, $sql_delete);
-
-        } else {
-            echo "Pedido pendiente no encontrado.";
-        }
-    } else {
-        // Actualizar estado en pedidos pendientes (otros estados)
-        $nuevo_estado_esc = mysqli_real_escape_string($conexion, $nuevo_estado);
-        $sql_update = "UPDATE pedidos_pendientes SET estado = '$nuevo_estado_esc' WHERE id_pendientes = $id_pedido";
-        mysqli_query($conexion, $sql_update);
-
-        echo "Estado del pedido actualizado.";
-    }
+} catch (Exception $e) {
+    echo "Error al enviar correo: {$mail->ErrorInfo}<br>";
 }
 
-// Consultar pedidos pendientes para mostrar en tabla
+$sql_delete = "DELETE FROM pedidos_pendientes WHERE id_pendientes = $id_pedido";
+mysqli_query($conexion, $sql_delete);
+
+}else{
+ echo "Pedido pendiente no encontrado.";
+}
+}else{
+$nuevo_estado_esc = mysqli_real_escape_string($conexion, $nuevo_estado);
+$sql_update = "UPDATE pedidos_pendientes SET estado = '$nuevo_estado_esc' WHERE id_pendientes = $id_pedido";
+mysqli_query($conexion, $sql_update);
+
+echo "Estado del pedido actualizado.";
+}
+}
 $sql = "SELECT * FROM pedidos_pendientes";
 $resultado = mysqli_query($conexion, $sql);
 ?>
