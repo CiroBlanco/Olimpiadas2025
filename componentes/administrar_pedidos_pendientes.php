@@ -18,7 +18,7 @@ if ($pedido = mysqli_fetch_assoc($res_get)) {
      $fecha_pedido = $pedido['fecha_pedido'];
 
  $sql_insert = "INSERT INTO pedidos_entregados (id_usuario, monto, fecha_pedido) 
-                           VALUES ('$id_usuario', '$monto', '$fecha_pedido')";
+             VALUES ('$id_usuario', '$monto', '$fecha_pedido')";
             mysqli_query($conexion, $sql_insert);
 
             $sql_delete = "DELETE FROM pedidos_pendientes WHERE id_pendientes = $id_pedido";
