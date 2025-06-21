@@ -11,7 +11,7 @@ if ($id_usuario) {
     $stmt->bind_param("i", $id_usuario);
     
     if ($stmt->execute()) {
-        echo "Carrito vaciado correctamente.";
+        header('location: carrito.php');
     } else {
         echo "Error al vaciar el carrito: " . $stmt->error;
     }
