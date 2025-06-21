@@ -65,11 +65,9 @@ if (mysqli_num_rows($consulta)>0) {
         <p><strong>Nombre: ".$producto['nombre']."</p>
         <p><strong>Descripción: ".$producto['descripcion']."</p>
         <p class='precio'><strong>Precio Unitario:</strong> $".$producto['precio_unitario']."</p>
-        </div>
         </div>";
- 
-echo'</div>';
-    }
+ }
+    echo'</div>';
 }else {
     //no hay productos
 }
@@ -79,7 +77,7 @@ echo'</div>';
 <input type="submit" class="finalizarcompra"value="Finalizar Compra">
 </form>
 <form action="vaciar_carrito.php" method="post">
- <button type="submit" class="finalizarcompra" value="Vaciar Carrito">Vaciar carrito</button>
+ <input type="submit" class="vaciarcarrito" value="Vaciar Carrito">
 </form>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

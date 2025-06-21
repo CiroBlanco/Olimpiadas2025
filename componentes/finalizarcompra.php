@@ -31,12 +31,8 @@ foreach ($productos as $id_producto) {
 }
 echo "Pedido confirmado correctamente.";
 ?>
-<?php
-include('conexion.php');
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/SMTP.php';
-require 'PHPMailer-master/src/Exception.php';
 
+<<<<<<< HEAD
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -107,4 +103,6 @@ while ($usuario = mysqli_fetch_assoc($usuarios)) {
     
 }
 ?>
+=======
+>>>>>>> 1421d0461492e8ab2e368c59b2bafe427f158f3e
 
