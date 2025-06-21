@@ -2,10 +2,9 @@
 session_start();
 include('conexion.php');
 
-if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
-    echo "Acceso denegado. Solo administradores pueden editar productos.";
-    header("Location ../index.php");
-    exit;
+if (!isset($_SESSION['admin'])) {
+   header("Location: ../index.php");
+    exit();
 }
 
 if (isset($_POST['id_producto'])) {
